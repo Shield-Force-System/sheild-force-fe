@@ -1,0 +1,383 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  ChatIcon,
+  FleetCard,
+  HeroRotorcraft,
+  ServiceVisual,
+} from "@/components/aviation-showcase";
+import { helicopterUseCases } from "@/components/site-data";
+import { ActionLink, ArrowIcon, SectionHeading } from "@/components/site-primitives";
+
+const helicopterServices = [
+  {
+    title: "Private Charter",
+    text: "Business and leisure rotorcraft transfers with concierge-grade timing, curated routes, and discreet service.",
+    tag: "VIP",
+    variant: "sunset",
+    href: "#flight-enquiry",
+  },
+  {
+    title: "Scenic Tours",
+    text: "Low-altitude city reveals, coastal flyovers, and high-drama arrival moments for premium travelers.",
+    tag: "TOUR",
+    variant: "copper",
+    href: "#flight-enquiry",
+  },
+  {
+    title: "Corporate Transfer",
+    text: "Fast intercity movement for leadership teams, investors, and executive scheduling teams.",
+    tag: "OPS",
+    variant: "night",
+    href: "#flight-enquiry",
+  },
+] as const;
+
+const featuredFleet = [
+  {
+    name: "CRH 29M",
+    price: "$990/hour",
+    tone: "dark",
+  },
+  {
+    name: "CRH 28",
+    price: "$1290/hour",
+    tone: "light",
+  },
+] as const;
+
+const charterBands = [
+  {
+    title: "Commercial range",
+    text: "₹50,000 to ₹350,000 per hour depending on aircraft, route, positioning, and standby rules.",
+  },
+  {
+    title: "Operational geography",
+    text: "Current emphasis is UP and NCR, aligned with the first phase service footprint.",
+  },
+  {
+    title: "Commercial note",
+    text: "Terms and conditions apply to route availability, positioning legs, and event-day scheduling.",
+  },
+] as const;
+
+const helicopterFlow = [
+  "Share route, date, passenger count, and mission type through the website enquiry form.",
+  "Shield Force aligns flight feasibility with event support, airport coordination, or rally timing.",
+  "Commercial range and aircraft suitability are reviewed before the final quote is sent.",
+  "Ground movement can be matched with bodyguard support or protected vehicle requirements.",
+] as const;
+
+export const metadata: Metadata = {
+  title: "Helicopter Booking",
+  description:
+    "Shield Force helicopter booking page with the premium aviation hero, charter services, fleet, and flight enquiry flow.",
+};
+
+export default function HelicopterBookingPage() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <main className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
+        <div className="mx-auto grid w-full gap-5">
+          <div className="space-y-5">
+            <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
+
+              <div className="relative min-h-[36rem] overflow-hidden px-4 pb-6 pt-7 sm:px-6 sm:pb-8 sm:pt-8 lg:min-h-[38rem] lg:px-8 lg:pb-10 lg:pt-10">
+                <div className="absolute inset-x-[18%] bottom-14 h-20 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),rgba(255,255,255,0.08)_30%,transparent_72%)] blur-[34px]" />
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
+
+                <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
+                  <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
+                    <span className="block">Your ultimate</span>
+                    <span className="block">private helicopter</span>
+                    <span className="block">experience</span>
+                  </h1>
+
+                  <p className="mt-7 max-w-[18rem] text-sm leading-6 text-white/58 sm:text-[14px]">
+                    At Sheild Force Helicopter Services, we redefine luxury travel with our
+                    state-of-the-art helicopters and unparalleled service.
+                  </p>
+
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href="#charter-services"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ae7f4f] px-5 py-3 text-sm font-medium text-[#130f0a] transition hover:bg-[#be9161]"
+                    >
+                      Discover more
+                      <ArrowIcon />
+                    </Link>
+                    <Link
+                      href="#flight-enquiry"
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
+                    >
+                      Book now
+                      <ArrowIcon />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0">
+                  <HeroRotorcraft />
+                </div>
+
+                <div className="absolute bottom-6 right-4 z-30 rounded-full bg-white p-2 text-black shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:right-6">
+                  <div className="flex items-center gap-3 rounded-full pr-3">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#111111] text-white">
+                      <ChatIcon />
+                    </span>
+                    <div className="text-sm leading-4">
+                      <div className="font-medium">Start a chat</div>
+                      <div className="text-black/70">with support</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              id="charter-services"
+              className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
+            >
+              <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="flex flex-col justify-between gap-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/36">Premium services</p>
+                    <h2 className="mt-4 max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
+                      Experience the freedom of the skies with Sheild Force.
+                    </h2>
+                  </div>
+                  <div className="max-w-md">
+                    <p className="text-sm leading-7 text-white/56">
+                      Discover a charter system designed for executives, premium leisure travel, and
+                      high-visibility arrivals. Fast response, clear pricing, and an elevated cabin
+                      feel.
+                    </p>
+                    <Link
+                      href="#flight-enquiry"
+                      className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/12"
+                    >
+                      Request flight
+                      <ArrowIcon />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 lg:grid-cols-2">
+                  {helicopterServices.slice(0, 2).map((service) => (
+                    <article key={service.title} className="rounded-[1.6rem] border border-white/8 bg-white/3 p-4">
+                      <ServiceVisual variant={service.variant} />
+                      <div className="mt-4 flex items-center justify-between gap-3">
+                        <h3 className="font-display text-[1.55rem] tracking-[-0.05em] text-white">
+                          {service.title}
+                        </h3>
+                        <span className="rounded-full border border-white/8 bg-white/6 px-3 py-1 text-[0.65rem] uppercase tracking-[0.22em] text-white/56">
+                          {service.tag}
+                        </span>
+                      </div>
+                      <p className="mt-3 text-sm leading-6 text-white/58">{service.text}</p>
+                      <Link
+                        href={service.href}
+                        className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#ae7f4f] px-3 py-2 text-xs font-medium text-[#140f09]"
+                      >
+                        Book now
+                        <ArrowIcon />
+                      </Link>
+                    </article>
+                  ))}
+
+                  <article className="rounded-[1.6rem] border border-white/8 bg-white/3 p-4 lg:col-span-2">
+                    <div className="grid gap-4 md:grid-cols-[0.9fr_1.1fr]">
+                      <ServiceVisual variant={helicopterServices[2].variant} />
+                      <div className="flex flex-col justify-between gap-4">
+                        <div>
+                          <div className="w-fit rounded-full border border-white/8 bg-white/6 px-3 py-1 text-[0.65rem] uppercase tracking-[0.22em] text-white/56">
+                            {helicopterServices[2].tag}
+                          </div>
+                          <h3 className="mt-4 font-display text-[1.9rem] tracking-[-0.05em] text-white">
+                            {helicopterServices[2].title}
+                          </h3>
+                          <p className="mt-3 text-sm leading-6 text-white/58">{helicopterServices[2].text}</p>
+                        </div>
+                        <Link
+                          href={helicopterServices[2].href}
+                          className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/12"
+                        >
+                          Schedule transfer
+                          <ArrowIcon />
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+
+            <section
+              id="fleet"
+              className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
+            >
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.3em] text-white/36">Fleet selection</p>
+                  <h2 className="mt-4 max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem]">
+                    Our fleet of luxurious helicopters
+                  </h2>
+                </div>
+                <p className="max-w-md text-sm leading-6 text-white/55">
+                  Explore aircraft configured for executive movement, scenic experiences, and
+                  ultra-fast regional transfers.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 lg:grid-cols-2">
+                {featuredFleet.map((craft) => (
+                  <FleetCard
+                    key={craft.name}
+                    name={craft.name}
+                    price={craft.price}
+                    tone={craft.tone}
+                    href="#flight-enquiry"
+                  />
+                ))}
+              </div>
+            </section>
+
+            <section className="mt-6 grid gap-4 xl:grid-cols-[1.02fr_0.98fr]">
+              <article id="flight-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+                <div className="relative z-10">
+                  <SectionHeading
+                    eyebrow="Flight Enquiry"
+                    title="The page now carries the full helicopter-first hero and still ends in a practical booking form."
+                    description="It collects the first inputs required for charter planning while keeping the launch scope frontend-only."
+                  />
+
+                  <form className="mt-7 grid gap-4" action="#">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Departure</span>
+                        <input className="form-input" type="text" placeholder="Lucknow, Noida, NCR" />
+                      </label>
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Arrival</span>
+                        <input className="form-input" type="text" placeholder="Destination city or helipad" />
+                      </label>
+                    </div>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Flight date</span>
+                        <input className="form-input" type="date" />
+                      </label>
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Passenger count</span>
+                        <input className="form-input" type="number" min="1" placeholder="4" />
+                      </label>
+                    </div>
+                    <label className="space-y-2 text-sm text-white/78">
+                      <span>Purpose</span>
+                      <select className="form-select" defaultValue="airport">
+                        <option value="airport">Airport pickup and drop</option>
+                        <option value="rally">Politician rally</option>
+                        <option value="celebrity">Celebrity event movement</option>
+                        <option value="premium">Premium intercity transfer</option>
+                      </select>
+                    </label>
+                    <label className="space-y-2 text-sm text-white/78">
+                      <span>Operational notes</span>
+                      <textarea
+                        className="form-textarea"
+                        placeholder="Add timing, ground escort requirement, event schedule, or protected vehicle need."
+                      />
+                    </label>
+                    <button
+                      type="submit"
+                      className="w-fit rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
+                    >
+                      Request charter quote
+                    </button>
+                  </form>
+                </div>
+              </article>
+
+              <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
+                <div className="relative z-10">
+                  <p className="eyebrow text-[#fff0cf]/70">Commercial Bands</p>
+                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                    Pricing and use case framing is visible before the user even submits an enquiry.
+                  </h2>
+
+                  <div className="mt-6 space-y-4">
+                    {charterBands.map((item) => (
+                      <div key={item.title} className="rounded-[1.35rem] border border-white/10 bg-black/12 p-5">
+                        <div className="text-base font-semibold text-white">{item.title}</div>
+                        <div className="mt-2 text-sm leading-7 text-[#fff1d8]/78">{item.text}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <section className="mt-6 grid gap-4 xl:grid-cols-[0.96fr_1.04fr]">
+              <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
+                <div className="relative z-10">
+                  <p className="eyebrow text-white/58">Charter Process</p>
+                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                    Flight movement is presented as an operational chain, not just a pricing widget.
+                  </h2>
+                  <div className="mt-6 space-y-4">
+                    {helicopterFlow.map((item, index) => (
+                      <div key={item} className="flex gap-4 rounded-[1.35rem] border border-white/10 bg-black/12 px-4 py-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[rgba(209,161,93,0.14)] text-sm font-semibold text-[var(--brand-strong)]">
+                          0{index + 1}
+                        </div>
+                        <div className="text-sm leading-7 text-white/72">{item}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </article>
+
+              <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+                <div className="relative z-10">
+                  <SectionHeading
+                    eyebrow="Linked Services"
+                    title="Helicopter movement can now be shown alongside ground escort and secure arrival support."
+                    description="That keeps the helicopter page useful for real scenarios like celebrity events, rally schedules, or high-risk airport movement."
+                  />
+
+                  <div className="mt-7 grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                      <div className="text-lg font-semibold text-white">Escort add-on</div>
+                      <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
+                        Pair helicopter arrival with personal or armed bodyguard support on the ground.
+                      </div>
+                    </div>
+                    <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                      <div className="text-lg font-semibold text-white">Protected vehicle add-on</div>
+                      <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
+                        Continue high-sensitivity movement with an on-demand bullet proof SUV when needed.
+                      </div>
+                    </div>
+                    {helicopterUseCases.slice(0, 2).map((item) => (
+                      <div key={item} className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                        <div className="text-lg font-semibold text-white">Use case</div>
+                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">{item}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-7">
+                    <ActionLink href="/bodyguards" variant="ghost">
+                      Add bodyguard support
+                    </ActionLink>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
