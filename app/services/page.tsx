@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   deploymentProtocol,
   pricingRows,
@@ -52,8 +53,8 @@ export default function ServicesPage() {
         <div className="relative z-10">
           <SectionHeading
             eyebrow="Service Breakdown"
-            title="Each category now has pricing cues, usage context, and direct paths into booking."
-            description="This page acts as the operational catalogue for the frontend release."
+            title="Each category now has pricing cues, usage context, and direct paths into enquiry."
+            description="This page acts as the operational catalogue for the live website and lead flow."
           />
 
           <div className="mt-8 grid gap-4">
@@ -83,20 +84,34 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                    <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
-                      <div className="text-xs uppercase tracking-[0.22em] text-white/42">Price</div>
-                      <div className="mt-2 text-lg font-semibold text-white">{service.price}</div>
-                    </div>
-                    <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
-                      <div className="text-xs uppercase tracking-[0.22em] text-white/42">
-                        Commercial Note
+                  <div className="grid gap-3">
+                    <div className="relative overflow-hidden rounded-[1.25rem] border border-white/8 bg-[radial-gradient(circle_at_72%_22%,rgba(209,161,93,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.14))]">
+                      <div className="relative h-44 sm:h-48">
+                        <Image
+                          src={service.image.src}
+                          alt={service.image.alt}
+                          fill
+                          sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                          className="object-contain p-4"
+                        />
                       </div>
-                      <div className="mt-2 text-sm leading-6 text-white/78">{service.support}</div>
                     </div>
-                    <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
-                      <div className="text-xs uppercase tracking-[0.22em] text-white/42">Location</div>
-                      <div className="mt-2 text-sm leading-6 text-white/78">{service.location}</div>
+
+                    <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                      <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
+                        <div className="text-xs uppercase tracking-[0.22em] text-white/42">Price</div>
+                        <div className="mt-2 text-lg font-semibold text-white">{service.price}</div>
+                      </div>
+                      <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
+                        <div className="text-xs uppercase tracking-[0.22em] text-white/42">
+                          Commercial Note
+                        </div>
+                        <div className="mt-2 text-sm leading-6 text-white/78">{service.support}</div>
+                      </div>
+                      <div className="rounded-[1.25rem] border border-white/8 bg-white/4 p-4">
+                        <div className="text-xs uppercase tracking-[0.22em] text-white/42">Location</div>
+                        <div className="mt-2 text-sm leading-6 text-white/78">{service.location}</div>
+                      </div>
                     </div>
                   </div>
                 </div>

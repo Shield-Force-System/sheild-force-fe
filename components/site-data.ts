@@ -18,6 +18,10 @@ export const serviceCards = [
     title: "Armed Security - Rifle",
     href: "/services#armed-rifle",
     tag: "High Visibility",
+    image: {
+      src: "/Images/armed-security.svg",
+      alt: "Shield Force armed rifle security deployment",
+    },
     summary:
       "Licensed rifle deployment for rallies, route sanitisation, and exposed movement windows where deterrence matters.",
     price: "₹35,000 - ₹40,000 / month",
@@ -29,6 +33,10 @@ export const serviceCards = [
     title: "Armed Security - Pistol",
     href: "/services#armed-pistol",
     tag: "Close Protection",
+    image: {
+      src: "/Images/armed-security.svg",
+      alt: "Shield Force close protection armed security",
+    },
     summary:
       "Compact armed protection for VIP movement, airport transfers, and low-footprint executive security.",
     price: "Custom quote",
@@ -40,6 +48,10 @@ export const serviceCards = [
     title: "Personal Bodyguard",
     href: "/services#personal-bodyguard",
     tag: "Executive Escort",
+    image: {
+      src: "/Images/bodyguard.png",
+      alt: "Shield Force personal bodyguard",
+    },
     summary:
       "Normal bodyguard deployments for family movement, business travel, and daily personal protection with trained staff.",
     price: "₹20,000 - ₹30,000 / month",
@@ -51,6 +63,10 @@ export const serviceCards = [
     title: "Helicopter Rental",
     href: "/helicopter-booking",
     tag: "Rapid Mobility",
+    image: {
+      src: "/Images/helicopter.png",
+      alt: "Shield Force helicopter rental",
+    },
     summary:
       "Helicopter booking for airport pick-up and drop, celebrity movement, politician rally logistics, and urgent transfers.",
     price: "₹50,000 - ₹350,000 / hour",
@@ -62,6 +78,10 @@ export const serviceCards = [
     title: "Events & Celebrity Security",
     href: "/services#events-security",
     tag: "Crowd-Control Ops",
+    image: {
+      src: "/Images/events-security.svg",
+      alt: "Shield Force events and celebrity security",
+    },
     summary:
       "Managed deployments for celebrity events, public gatherings, airport reception, and politician rally support.",
     price: "Daily and monthly plans",
@@ -73,6 +93,10 @@ export const serviceCards = [
     title: "On Demand Bullet Proof Vehicles",
     href: "/services#on-demand-vehicle",
     tag: "Protected Transport",
+    image: {
+      src: "/Images/protected-vehicle.svg",
+      alt: "Shield Force protected vehicle",
+    },
     summary:
       "Protected SUV allocation with operating support, route planning, and optional security escort integration.",
     price: "₹10,000 - ₹20,000 / day",
@@ -174,7 +198,7 @@ export const deploymentProtocol = [
   {
     title: "Client Profile Share",
     detail:
-      "Clients receive the guard profile, skill fit, and deployment intent before confirmation and order placement.",
+      "Clients receive the guard profile, skill fit, and deployment intent before follow-up confirmation and scheduling.",
   },
   {
     title: "Issued By Shield Force",
@@ -195,34 +219,34 @@ export const bookingSteps = [
       "Select a bodyguard, helicopter request, event cover, or bullet proof vehicle requirement based on the assignment.",
   },
   {
-    title: "Share deployment details",
+    title: "Submit the website form",
     detail:
-      "Provide city, dates, threat level, movement plan, and whether airport pickup, rally coverage, or VIP movement is required.",
+      "Share city, dates, threat level, movement plan, and whether airport pickup, rally coverage, or VIP movement is required.",
   },
   {
-    title: "Review profile and quote",
+    title: "Get a follow-up and quote",
     detail:
-      "Shield Force shares the proposed profile, verification status, and commercial terms before confirmation.",
+      "Shield Force reviews the lead, shares the proposed profile or charter fit, and follows up with commercial terms.",
   },
   {
-    title: "Deploy with coordination",
+    title: "Confirm and schedule",
     detail:
-      "Once approved, the team moves with equipment, communication setup, dress code, and site brief in place.",
+      "Once approved, the team schedules the assignment and coordinates equipment, dress code, and field brief manually.",
   },
 ] as const;
 
 export const roadmapItems = [
   {
-    phase: "Initial Phase",
-    title: "Website-led enquiries only",
+    phase: "Current Model",
+    title: "Website listings and lead forms",
     detail:
-      "The website handles customer onboarding, bodyguard onboarding, service discovery, and quote requests in the first launch.",
+      "The website lists services and bodyguards, collects customer enquiries, and captures onboarding requests for guards.",
   },
   {
-    phase: "Later Phase",
-    title: "Internal and client app",
+    phase: "Follow-Up Process",
+    title: "Manual review after every enquiry",
     detail:
-      "Planned app features include police call support by area, video call recording for evidence, and ticket-based issue handling.",
+      "After a form is submitted, Shield Force reviews the requirement, shortlists the fit, and follows up directly with the next steps.",
   },
 ] as const;
 
@@ -234,6 +258,7 @@ export const helicopterUseCases = [
 ] as const;
 
 export const serviceSupportNotes = [
+  "All customer enquiries come through website forms and are followed up manually by the Shield Force team.",
   "All listed bodyguards are intended to be in-house Shield Force employees.",
   "Any eligible bodyguard can onboard through the website with a ₹1,500 registration charge.",
   "Customer cab requirements are planned through a Daftar Route tie-up.",

@@ -63,15 +63,15 @@ const charterBands = [
 
 const helicopterFlow = [
   "Share route, date, passenger count, and mission type through the website enquiry form.",
-  "Shield Force aligns flight feasibility with event support, airport coordination, or rally timing.",
-  "Commercial range and aircraft suitability are reviewed before the final quote is sent.",
-  "Ground movement can be matched with bodyguard support or protected vehicle requirements.",
+  "Shield Force reviews flight feasibility along with event support, airport coordination, or rally timing.",
+  "The team follows up with aircraft suitability, commercial range, and the next scheduling step.",
+  "Ground movement can be matched with bodyguard support or protected vehicle requirements if needed.",
 ] as const;
 
 export const metadata: Metadata = {
   title: "Helicopter Booking",
   description:
-    "Shield Force helicopter booking page with the premium aviation hero, charter services, fleet, and flight enquiry flow.",
+    "Shield Force helicopter booking page with charter options, fleet visuals, website enquiry capture, and manual follow-up flow.",
 };
 
 export default function HelicopterBookingPage() {
@@ -89,14 +89,14 @@ export default function HelicopterBookingPage() {
 
                 <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
                   <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-                    <span className="block">Your ultimate</span>
-                    <span className="block">private helicopter</span>
-                    <span className="block">experience</span>
+                    <span className="block">Private helicopter</span>
+                    <span className="block">booking with</span>
+                    <span className="block">direct follow-up</span>
                   </h1>
 
                   <p className="mt-7 max-w-[18rem] text-sm leading-6 text-white/58 sm:text-[14px]">
-                    At Sheild Force Helicopter Services, we redefine luxury travel with our
-                    state-of-the-art helicopters and unparalleled service.
+                    Browse the helicopter options, submit your route through the website form, and
+                    Shield Force follows up with feasibility, aircraft fit, and pricing.
                   </p>
 
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -104,14 +104,14 @@ export default function HelicopterBookingPage() {
                       href="#charter-services"
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ae7f4f] px-5 py-3 text-sm font-medium text-[#130f0a] transition hover:bg-[#be9161]"
                     >
-                      Discover more
+                      View services
                       <ArrowIcon />
                     </Link>
                     <Link
                       href="#flight-enquiry"
                       className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
                     >
-                      Book now
+                      Send enquiry
                       <ArrowIcon />
                     </Link>
                   </div>
@@ -144,20 +144,19 @@ export default function HelicopterBookingPage() {
                   <div>
                     <p className="text-xs uppercase tracking-[0.3em] text-white/36">Premium services</p>
                     <h2 className="mt-4 max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
-                      Experience the freedom of the skies with Sheild Force.
+                      Helicopter enquiries run through one website flow with direct team follow-up.
                     </h2>
                   </div>
                   <div className="max-w-md">
                     <p className="text-sm leading-7 text-white/56">
-                      Discover a charter system designed for executives, premium leisure travel, and
-                      high-visibility arrivals. Fast response, clear pricing, and an elevated cabin
-                      feel.
+                      Review the charter use cases, submit your route and timing, and the team will
+                      come back with aircraft suitability and commercial terms.
                     </p>
                     <Link
                       href="#flight-enquiry"
                       className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/12"
                     >
-                      Request flight
+                      Send helicopter enquiry
                       <ArrowIcon />
                     </Link>
                   </div>
@@ -180,7 +179,7 @@ export default function HelicopterBookingPage() {
                         href={service.href}
                         className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#ae7f4f] px-3 py-2 text-xs font-medium text-[#140f09]"
                       >
-                        Book now
+                        Send enquiry
                         <ArrowIcon />
                       </Link>
                     </article>
@@ -203,7 +202,7 @@ export default function HelicopterBookingPage() {
                           href={helicopterServices[2].href}
                           className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/12"
                         >
-                          Schedule transfer
+                          Send transfer enquiry
                           <ArrowIcon />
                         </Link>
                       </div>
@@ -248,11 +247,21 @@ export default function HelicopterBookingPage() {
                 <div className="relative z-10">
                   <SectionHeading
                     eyebrow="Flight Enquiry"
-                    title="The page now carries the full helicopter-first hero and still ends in a practical booking form."
-                    description="It collects the first inputs required for charter planning while keeping the launch scope frontend-only."
+                    title="The helicopter page ends in a simple website form for direct team follow-up."
+                    description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
                   />
 
                   <form className="mt-7 grid gap-4" action="#">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Full name</span>
+                        <input className="form-input" type="text" placeholder="Enter your full name" />
+                      </label>
+                      <label className="space-y-2 text-sm text-white/78">
+                        <span>Phone number</span>
+                        <input className="form-input" type="tel" placeholder="+91 98765 43210" />
+                      </label>
+                    </div>
                     <div className="grid gap-4 sm:grid-cols-2">
                       <label className="space-y-2 text-sm text-white/78">
                         <span>Departure</span>
@@ -274,10 +283,11 @@ export default function HelicopterBookingPage() {
                       </label>
                     </div>
                     <label className="space-y-2 text-sm text-white/78">
-                      <span>Purpose</span>
-                      <select className="form-select" defaultValue="airport">
+                      <span>Service type</span>
+                      <select className="form-select" defaultValue="charter">
+                        <option value="charter">Private charter</option>
                         <option value="airport">Airport pickup and drop</option>
-                        <option value="rally">Politician rally</option>
+                        <option value="rally">Politician rally movement</option>
                         <option value="celebrity">Celebrity event movement</option>
                         <option value="premium">Premium intercity transfer</option>
                       </select>
@@ -293,7 +303,7 @@ export default function HelicopterBookingPage() {
                       type="submit"
                       className="w-fit rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
                     >
-                      Request charter quote
+                      Send helicopter enquiry
                     </button>
                   </form>
                 </div>

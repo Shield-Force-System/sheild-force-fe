@@ -86,18 +86,19 @@ export function SiteHeader() {
             <div className="ml-auto flex items-center gap-2">
               <Link
                 href="/helicopter-booking"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-medium text-black"
+                className="inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
+                style={{ color: "#050505" }}
               >
-                Book Now
+                Send Enquiry
                 <ArrowIcon />
               </Link>
 
-              <button
+              {/* <button
                 type="button"
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ae7f4f] text-black"
               >
                 <MenuIcon />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

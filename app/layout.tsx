@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Shield Force",
   },
   description:
-    "Shield Force frontend for bodyguard booking, helicopter rental, armed security, event deployment, and protected vehicles across UP and NCR.",
+    "Shield Force website for bodyguard enquiries, helicopter leads, armed security, event deployment, and protected vehicles across UP and NCR.",
 };
 
 export default function RootLayout({

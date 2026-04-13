@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { HomepageHeroCarousel } from "@/components/homepage-hero-carousel";
 import {
@@ -24,6 +25,7 @@ function ServicePanel({
   location,
   tag,
   tone,
+  image,
 }: {
   title: string;
   summary: string;
@@ -33,16 +35,42 @@ function ServicePanel({
   location: string;
   tag: string;
   tone: "dark" | "warm" | "olive";
+  image: {
+    src: string;
+    alt: string;
+  };
 }) {
   const tones = {
     dark: "section-card text-white",
     warm: "warm-panel border border-white/10 text-[#fff2d8]",
     olive: "olive-panel border border-white/10 text-white",
   };
+  const visuals = {
+    dark:
+      "bg-[radial-gradient(circle_at_70%_22%,rgba(101,139,152,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.12))]",
+    warm:
+      "bg-[radial-gradient(circle_at_68%_18%,rgba(255,214,160,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.12))]",
+    olive:
+      "bg-[radial-gradient(circle_at_70%_18%,rgba(200,220,170,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.14))]",
+  };
 
   return (
     <article className={`relative overflow-hidden rounded-[1.7rem] p-5 ${tones[tone]}`}>
       <div className="relative z-10">
+        <div
+          className={`relative mb-5 overflow-hidden rounded-[1.35rem] border border-white/8 ${visuals[tone]}`}
+        >
+          <div className="relative h-40 sm:h-44">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+              className="object-contain p-4"
+            />
+          </div>
+        </div>
+
         <div className="flex items-start justify-between gap-3">
           <div className="rounded-full border border-white/12 bg-black/12 px-3 py-1 text-[0.7rem] uppercase tracking-[0.24em] text-white/72">
             {tag}
@@ -90,8 +118,8 @@ export default function Home() {
             >
               <SectionHeading
                 eyebrow="Service Coverage"
-                title="The homepage now fronts the full Shield Force service stack, not just helicopters."
-                description="Clients can move from a single landing page into bodyguards, armed security, helicopter rental, events coverage, or protected vehicles without the site feeling like a one-service brand."
+                title="Every Shield Force service now has a clear visual place on the homepage."
+                description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
               />
 
               <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -106,6 +134,7 @@ export default function Home() {
                     location={service.location}
                     tag={service.tag}
                     tone={index % 3 === 0 ? "warm" : index % 3 === 1 ? "dark" : "olive"}
+                    image={service.image}
                   />
                 ))}
               </div>
@@ -115,7 +144,7 @@ export default function Home() {
               <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    eyebrow="Pricing Snapshot"
+                    // eyebrow="Pricing Snapshot"
                     title="Core website pricing remains visible for the main service lines."
                     description="The initial phase is enquiry-led, but the homepage still gives users enough commercial detail to understand monthly, hourly, and event-based service bands."
                   />

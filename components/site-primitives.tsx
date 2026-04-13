@@ -65,17 +65,17 @@ export function SectionHeading({
   title,
   description,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   description: string;
 }) {
   return (
-    <div className="max-w-3xl">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2 className="display-title mt-4 max-w-[16ch] text-[2rem] leading-[0.92] text-white sm:text-[2.6rem]">
+    <div className="max-w-[72rem]">
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+      <h2 className={`display-title ${eyebrow ? "mt-4" : "mt-0"} max-w-[24ch] text-[2rem] leading-[0.92] text-white sm:max-w-[30ch] sm:text-[2.6rem]`}>
         {title}
       </h2>
-      <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
+      <p className="mt-4 max-w-[72ch] text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
         {description}
       </p>
     </div>

@@ -17,7 +17,7 @@ const clientProof = [
 export const metadata: Metadata = {
   title: "Bodyguards",
   description:
-    "Shield Force bodyguard roster, onboarding flow, and customer enquiry interface for personal and armed protection.",
+    "Shield Force bodyguard roster, onboarding flow, and website enquiry capture for personal and armed protection.",
 };
 
 export default function BodyguardsPage() {
@@ -29,11 +29,11 @@ export default function BodyguardsPage() {
           <div>
             <p className="eyebrow">Bodyguard Page</p>
             <h1 className="display-title mt-5 max-w-[11ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-              Choose a guard, review the profile, then place the order.
+              Choose a guard, review the profile, then send the enquiry.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
               This page now supports both sides of the Shield Force bodyguard flow: guards can onboard,
-              and customers can browse listed profiles before requesting a deployment.
+              and customers can browse listed profiles before sending a request for follow-up.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -63,8 +63,8 @@ export default function BodyguardsPage() {
         <div className="relative z-10">
           <SectionHeading
             eyebrow="Live Roster"
-            title="The frontend now presents selectable bodyguard profiles instead of a generic enquiry-only wall."
-            description="These profiles are static frontend content for now, but they model the experience where customers pick a guard of their choice."
+            title="The website now presents selectable bodyguard profiles instead of a generic enquiry-only wall."
+            description="These profiles help customers review options and send a lead with a preferred guard, rather than relying on a blind callback request."
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
@@ -123,11 +123,11 @@ export default function BodyguardsPage() {
       <section className="mt-6 grid gap-4 xl:grid-cols-[0.98fr_1.02fr]">
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-            <SectionHeading
-              eyebrow="How Booking Works"
-              title="Customer booking is framed as a short operational flow, not a vague callback form."
-              description="The page now makes it clear how a client moves from service choice into guarded deployment."
-            />
+          <SectionHeading
+            eyebrow="How Booking Works"
+            title="Customer enquiries follow a short lead flow instead of an instant checkout."
+            description="The page now makes it clear how a client picks a guard, submits the form, and gets a follow-up from the team."
+          />
 
             <div className="mt-7 space-y-4">
               {bookingSteps.map((step, index) => (
@@ -168,17 +168,27 @@ export default function BodyguardsPage() {
           <div className="relative z-10">
             <p className="eyebrow">Customer Enquiry</p>
             <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem]">
-              Place a bodyguard request with profile preference, location, and deployment brief.
+              Send a bodyguard enquiry with profile preference, location, and deployment brief.
             </h2>
 
             <form className="mt-6 grid gap-4" action="#">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="space-y-2 text-sm text-white/78">
+                  <span>Full name</span>
+                  <input className="form-input" type="text" placeholder="Enter your full name" />
+                </label>
+                <label className="space-y-2 text-sm text-white/78">
+                  <span>Phone number</span>
+                  <input className="form-input" type="tel" placeholder="+91 98765 43210" />
+                </label>
+              </div>
               <label className="space-y-2 text-sm text-white/78">
                 <span>Preferred guard</span>
                 <input className="form-input" type="text" placeholder="Enter profile name or no preference" />
               </label>
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2 text-sm text-white/78">
-                  <span>Protection type</span>
+                  <span>Service type</span>
                   <select className="form-select" defaultValue="personal">
                     <option value="personal">Personal bodyguard</option>
                     <option value="rifle">Armed security - rifle</option>
@@ -212,7 +222,7 @@ export default function BodyguardsPage() {
                 type="submit"
                 className="w-fit rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
               >
-                Submit request
+                Send enquiry
               </button>
             </form>
           </div>
@@ -225,7 +235,7 @@ export default function BodyguardsPage() {
               Register to be listed on the Shield Force website.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-7 text-[#fff1d8]/82">
-              The frontend now exposes the registration flow clearly, including the ₹1,500 onboarding
+              The website now shows the registration flow clearly, including the ₹1,500 onboarding
               fee and the information needed for verification.
             </p>
 

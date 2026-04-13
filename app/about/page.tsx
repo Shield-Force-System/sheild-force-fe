@@ -10,7 +10,7 @@ const operatingPoints = [
   "In-house guard model for stronger control over training, discipline, and deployment readiness.",
   "Client-first verification flow where background and licence checks happen before assignment confirmation.",
   "A combined security and mobility offering that brings guards, helicopter charter, events, and protected vehicles under one brand.",
-  "Website-first launch that can be used immediately while the longer-term app layer is defined.",
+  "Website-first lead model where customers submit forms and the team follows up manually.",
 ] as const;
 
 const trustSignals = [
@@ -31,7 +31,7 @@ const trustSignals = [
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Shield Force, its in-house protection model, verification process, and phased product rollout.",
+    "About Shield Force, its in-house protection model, verification process, and website-led enquiry flow.",
 };
 
 export default function AboutPage() {
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Deployment Standard"
             title="The business model is framed around verification, visible readiness, and cleaner field communication."
-            description="This section explains the operational standard that sits behind the frontend experience."
+            description="This section explains the operational standard that sits behind the website experience."
           />
 
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
@@ -111,7 +111,7 @@ export default function AboutPage() {
           <div className="relative z-10">
             <p className="eyebrow text-white/58">Business Support</p>
             <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-              The frontend also explains how Shield Force supports the edge cases around deployment.
+              The website also explains how Shield Force supports the edge cases around deployment.
             </h2>
             <div className="mt-6">
               <DetailList items={serviceSupportNotes} />
@@ -121,9 +121,9 @@ export default function AboutPage() {
 
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow">Roadmap</p>
+            <p className="eyebrow">Lead Flow</p>
             <h2 className="display-title mt-4 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
-              Product scope grows from website enquiries into an operational app layer.
+              Shield Force works through website enquiries first, then manual follow-up and scheduling.
             </h2>
 
             <div className="mt-6 space-y-4">
