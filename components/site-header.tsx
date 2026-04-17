@@ -4,11 +4,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const primaryNav = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Bodyguards", href: "/bodyguards" },
-  { label: "Helicopter Booking", href: "/helicopter-booking" },
+  // { label: "Bodyguards", href: "/bodyguards" },
+  // { label: "Helicopter Rental", href: "/helicopter-booking" },
 ];
+const servicesDropdown = [
+  { label: "Helicopter-Booking", href: "/helicopter-booking" },
+  { label: "Bodyguards", href: "/bodyguards" },
+  { label: "Armed Security ", href: "/armed-security" },
+];
+
 
 function ArrowIcon() {
   return (
@@ -51,7 +58,7 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
-        <div className="relative flex items-center justify-between gap-4 overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
+        <div className="relative flex items-center justify-between gap-4 rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
           <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
 
           <div className="relative flex w-full items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
@@ -59,7 +66,28 @@ export function SiteHeader() {
               {primaryNav.map((item) => {
                 const isActive =
                   pathname === item.href || pathname.startsWith(`${item.href}/`);
+if (item.label === "Services") {
+      return (
+        <div key={item.label} className="relative group z-50">
+          <button className="relative pb-4 text-white/62 hover:text-white">
+            {item.label}
+          </button>
 
+          {/* Dropdown */}
+          <div className="absolute left-0 top-full mt-2 min-w-[180px] rounded-xl border border-white/10 bg-[#050505] shadow-lg z-50 opacity-0 scale-95 transition-all duration-200 group-hover:opacity-100 group-hover:scale-100">
+            {servicesDropdown.map((sub) => (
+              <Link
+                key={sub.label}
+                href={sub.href}
+                className="block px-4 py-3 text-sm text-white/70 hover:bg-white/10 hover:text-white"
+              >
+                {sub.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      );
+    }
                 return (
                   <Link
                     key={item.label}
@@ -91,6 +119,14 @@ export function SiteHeader() {
               >
                 Send Enquiry
                 <ArrowIcon />
+              </Link>
+              <Link
+                href="/login"
+                className="inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
+                style={{ color: "#050505" }}
+              >
+                Login
+               
               </Link>
 
               {/* <button

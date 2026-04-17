@@ -9,6 +9,27 @@ import {
   serviceSupportNotes,
 } from "@/components/site-data";
 import { ArrowIcon, SectionHeading } from "@/components/site-primitives";
+import { FaqTestimonials } from "@/components/faq-testimonials";
+import { ShieldCheck, MapPin, Zap } from "lucide-react";
+
+ const stats = [
+    {
+      title: "Verified Guards",
+      value: "500+",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Coverage",
+      value: "UP & NCR",
+      icon: MapPin,
+    },
+    {
+      title: "Deployment SLA",
+      value: "24 hrs",
+      icon: Zap,
+    },
+  ];
+
 
 export const metadata: Metadata = {
   title: "Home",
@@ -52,7 +73,7 @@ function ServicePanel({
       "bg-[radial-gradient(circle_at_68%_18%,rgba(255,214,160,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.12))]",
     olive:
       "bg-[radial-gradient(circle_at_70%_18%,rgba(200,220,170,0.18),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(0,0,0,0.14))]",
-  };
+  };  
 
   return (
     <article className={`relative overflow-hidden rounded-[1.7rem] p-5 ${tones[tone]}`}>
@@ -116,11 +137,20 @@ export default function Home() {
               id="services"
               className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
             >
-              <SectionHeading
-                eyebrow="Service Coverage"
-                title="Every Shield Force service now has a clear visual place on the homepage."
-                description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
-              />
+             <div className="max-w-[720px]">
+            <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+              Service Coverage
+            </p>
+
+            <h2 className="mt-4 text-[2rem] sm:text-[2.4rem] lg:text-[3.2rem] leading-[1.1] lg:leading-[1.05] font-semibold tracking-tight text-white max-w-[600px] lg:max-w-[720px]">
+             <span className="text-[#ffd6a0]">Security services</span>  built for real-world deployment
+            </h2>
+
+            <p className="mt-5 text-[14px] sm:text-[15px] leading-7 text-white/60 max-w-[520px] lg:max-w-[600px]">
+              From personal bodyguards to armed security, helicopter rental, and protected vehicles —
+              deploy the right solution with verified professionals across UP & NCR.
+            </p>
+          </div>
 
               <div className="mt-8 grid gap-4 lg:grid-cols-3">
                 {serviceCards.map((service, index) => (
@@ -145,72 +175,118 @@ export default function Home() {
                 <div className="relative z-10">
                   <SectionHeading
                     // eyebrow="Pricing Snapshot"
-                    title="Core website pricing remains visible for the main service lines."
-                    description="The initial phase is enquiry-led, but the homepage still gives users enough commercial detail to understand monthly, hourly, and event-based service bands."
+                    title="Transparent rates.No hidden fees."
+                    description="Monthly, hourly, and event-based service bands for all deployments across UP & NCR."
                   />
 
-                  <div className="table-shell mt-7 overflow-x-auto">
-                    <table>
-                      <thead>
-                        <tr className="text-sm uppercase tracking-[0.18em] text-white/52">
-                          <th>Service</th>
-                          <th>Price</th>
-                          <th>Location</th>
-                          <th>Events</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-sm leading-6 text-white/78">
-                        {pricingRows.map((row) => (
-                          <tr key={row.service}>
-                            <td className="font-medium text-white">{row.service}</td>
-                            <td>{row.price}</td>
-                            <td>{row.location}</td>
-                            <td>{row.eventRate}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                  <div className="mt-8 space-y-4">
+                    {pricingRows.map((row) => {
+                    const Icon = row.icon;
+
+                    return (
+                    <div
+                    key={row.service}
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 hover:bg-white/[0.06] transition"
+                    >
+                 
+                    <div className="flex items-center gap-4">
+                      <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/10">
+                        <Icon className="h-5 w-5 text-[#e7c38a]" />
+                      </div>
+
+                      <div>
+                        <div className="text-white font-medium">{row.service}</div>
+                        <div className="text-white/50 text-sm">{row.location}</div>
+                      </div>
+                    </div>
+
+                  
+                    <div className="text-right">
+                      <div className="text-[#e7c38a] font-medium">{row.price}</div>
+                      <div className="text-white/50 text-sm">{row.eventRate}</div>
+                    </div>
+                    </div>
+                    );
+                    })}
+                    </div>
                 </div>
+                <div className="grid gap-6 md:grid-cols-3 mt-10">
+      {stats.map((item, index) => {
+        const Icon = item.icon;
+
+        return (
+          <div
+            key={index}
+            className="relative rounded-2xl border border-white/10 bg-[#0b0b0b] px-6 py-5 flex items-center gap-4
+            hover:border-[#e7c38a]/40 transition"
+          >
+            {/* ICON */}
+            <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-[#1a1a1a]">
+              <Icon className="h-6 w-6 text-[#e7c38a]" />
+            </div>
+
+            {/* TEXT */}
+            <div>
+              <div className="text-xs uppercase tracking-[0.2em] text-white/50">
+                {item.title}
+              </div>
+              <div className="text-xl font-semibold text-[#e7c38a] mt-1">
+                {item.value}
+              </div>
+            </div>
+
+            {/* GLOW EFFECT */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#e7c38a]/5 to-transparent opacity-0 hover:opacity-100 transition pointer-events-none" />
+          </div>
+        );
+      })}
+    </div>
               </article>
 
               <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
                 <div className="relative z-10">
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#fff0cf]/70">Readiness Layer</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-                    Operations are presented around verified deployment, not generic staffing.
+                  {/* <p className="text-xs uppercase tracking-[0.28em] text-[#fff0cf]/70">Readiness Layer</p> */}
+                  <h2 className="display-title   text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                 Elite security through verified professionals
                   </h2>
 
                   <div className="mt-6 space-y-4">
-                    {deploymentProtocol.map((item) => (
-                      <div key={item.title} className="rounded-[1.35rem] border border-white/10 bg-black/12 p-5">
-                        <div className="text-base font-semibold text-white">{item.title}</div>
-                        <div className="mt-2 text-sm leading-7 text-[#fff1d8]/78">{item.detail}</div>
+                  {deploymentProtocol.map((item, index) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <div
+                        key={item.title}
+                        className="flex items-center justify-between rounded-[1.35rem] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] px-5 py-4 hover:bg-white/[0.08] transition"
+                      >
+                        
+                        <div className="flex items-center gap-4">
+                          <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-white/10">
+                            <Icon className="h-5 w-5 text-[#e7c38a]" />
+                          </div>
+
+                          <div>
+                            <div className="text-white font-semibold">{item.title}</div>
+                            <div className="text-sm text-white/60 leading-6 max-w-[28rem]">
+                              {item.detail}
+                            </div>
+                          </div>
+                        </div>
+
+                        
+                        <div className="text-white/30 text-sm font-medium">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
                       </div>
-                    ))}
-                  </div>
+                    );
+                  })}
+                </div>
                 </div>
               </article>
             </section>
 
-            <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
-              <div className="relative z-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-                <div>
-                  <p className="eyebrow">Launch Notes</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
-                    The homepage now sells the full command model behind Shield Force.
-                  </h2>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {serviceSupportNotes.map((note) => (
-                    <div key={note} className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5 text-sm leading-7 text-[var(--ink-muted)]">
-                      {note}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
+            
+            <FaqTestimonials/>
           </div>
         </div>
       </main>

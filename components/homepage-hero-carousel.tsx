@@ -24,7 +24,7 @@ const slides = [
     accent:
       "bg-[radial-gradient(circle_at_84%_16%,rgba(255,211,155,0.16),transparent_30%),radial-gradient(circle_at_12%_80%,rgba(255,255,255,0.08),transparent_22%)]",
   },
-    {
+  {
     id: "02",
     title: "Helicopter Rental",
     lines: ["Helicopter", "Rental"],
@@ -124,19 +124,17 @@ export function HomepageHeroCarousel() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
       <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${activeSlide.accent}`} />
 
-      <div className="relative min-h-[38rem] overflow-hidden px-4 pb-6 pt-7 sm:px-6 sm:pb-8 sm:pt-8 lg:min-h-[40rem] lg:px-8 lg:pb-10 lg:pt-10">
+      <div className="relative min-h-[38rem] px-4 pb-6 pt-7 sm:px-6 sm:pb-8 sm:pt-8 lg:min-h-[44rem] lg:px-8 lg:pb-10 lg:pt-10">
         <div className="absolute inset-x-[18%] bottom-14 h-20 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),rgba(255,255,255,0.08)_30%,transparent_72%)] blur-[34px]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
 
-        <div className="relative z-20 max-w-[30rem] pt-2 sm:pt-4 lg:pt-10">
-
+        <div className="relative z-20 max-w-[35rem] pt-2 sm:pt-4 lg:pt-10">
           <div key={activeSlide.id} className="transition duration-500 ease-out">
             <h1 className="hero-title mt-4 text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
               <span className="block">{activeSlide.lines[0]}</span>
               <span className="block">{activeSlide.lines[1]}</span>
             </h1>
-
-            <p className="mt-7 max-w-[25rem] text-sm leading-6 text-white/58 sm:text-[14px]">
+            <p className="mt-7 max-w-[25rem] text-sm leading-6 text-white/58 sm:text-[14px] md:text-base">
               {activeSlide.description}
             </p>
           </div>
@@ -172,7 +170,6 @@ export function HomepageHeroCarousel() {
           <div className="mt-7 flex flex-wrap gap-2">
             {slides.map((slide, index) => {
               const isActive = index === activeIndex;
-
               return (
                 <button
                   key={slide.id}
@@ -192,17 +189,17 @@ export function HomepageHeroCarousel() {
           </div>
         </div>
 
-        <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0">
-          <div key={activeSlide.id} className={`transition duration-500 ease-out ${activeSlide.image.frameClassName}`}>
-          <Image
-            src={activeSlide.image.src}
-            alt={activeSlide.image.alt}
-            width={activeSlide.image.width}
-            height={activeSlide.image.height}
-            priority
-            sizes="(min-width: 1024px) 79vw, (min-width: 640px) 112vw, 118vw"
-            className="h-auto w-full object-contain drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
-          />
+        <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:inset-y-0 lg:left-[36%] lg:mt-0 lg:w-[64%] lg:max-w-none lg:translate-x-0">
+          <div key={activeSlide.id} className={`h-full transition duration-500 ease-out ${activeSlide.image.frameClassName}`}>
+            <Image
+              src={activeSlide.image.src}
+              alt={activeSlide.image.alt}
+              width={activeSlide.image.width}
+              height={activeSlide.image.height}
+              priority
+              sizes="(min-width: 1024px) 64vw, (min-width: 640px) 112vw, 118vw"
+              className="h-full w-full object-contain object-center drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
+            />
           </div>
         </div>
 
