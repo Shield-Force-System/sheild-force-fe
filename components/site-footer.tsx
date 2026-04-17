@@ -1,13 +1,10 @@
 import Link from "next/link";
 
 const legalLinks = [
-  "Terms of Use",
-  "Privacy Policy",
-  "Equal Opportunity Policy",
-  "Refund & Cancellation Policy",
-  "Vulnerability Disclosure Policy",
-  "Annual Return",
-];
+  { label: "Terms of Use", href: "/terms-of-use" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Refund & Cancellation", href: "/refund-and-cancellation" },
+] as const;
 
 function SparkIcon({ className }: { className?: string }) {
   return (
@@ -69,19 +66,21 @@ export function SiteFooter() {
           </div>
 
           <div className="relative z-10 mt-auto border-t border-[#1a110a]/12 pt-6">
-            <div className="flex flex-col gap-5 text-sm text-[#1a110a]/92 lg:flex-row lg:items-center lg:justify-between">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1a110a] text-sm font-bold text-[#f5e1c6]">
-                  C
-                </span>
-                <span>2025 Sheild Force Aviation Pvt. Ltd. All rights reserved.</span>
+            <div className="flex flex-col gap-5 text-sm text-[#1a110a]/92 lg:flex-row lg:items-end lg:justify-between">
+              <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1a110a] text-sm font-bold text-[#f5e1c6]">
+                    C
+                  </span>
+                  <span>2025 Shield Force. All rights reserved - Powered by Daftar Route Technology.</span>
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-3 lg:justify-end">
                 {legalLinks.map((link) => (
-                  <a key={link} href="#" className="transition hover:text-[#f8ebd7]">
-                    {link}
-                  </a>
+                  <Link key={link.label} href={link.href} className="transition hover:text-[#f8ebd7]">
+                    {link.label}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -89,7 +88,7 @@ export function SiteFooter() {
 
           <div className="pointer-events-none absolute inset-x-0 bottom-[-4.5rem] overflow-hidden">
             <div className="translate-x-[-1%] select-none text-[7rem] font-black uppercase leading-none tracking-[-0.08em] text-[#875b33]/45 sm:text-[11rem] lg:text-[18rem]">
-              Sheild
+              Shield
             </div>
           </div>
         </section>
