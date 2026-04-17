@@ -172,12 +172,6 @@ export default function RefundAndCancellationPage() {
       description="This page explains how cancellations, refund requests, and booking-related charges are handled through the Shield Force website. The aim is to give customers clear expectations and confidence about how review, approval, and communication are managed."
       highlights={highlights}
       sections={sections}
-      footerNote={
-        <>
-          <strong>Final Note:</strong> Keep placeholders updated before going live: effective date,
-          contact email, and company legal name.
-        </>
-      }
     />
   );
 }

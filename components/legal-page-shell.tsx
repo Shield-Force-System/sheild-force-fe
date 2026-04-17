@@ -16,14 +16,12 @@ export function LegalPageShell({
   description,
   highlights,
   sections,
-  footerNote,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   highlights: readonly Highlight[];
   sections: readonly LegalSection[];
-  footerNote?: ReactNode;
 }) {
   const highlightColumns =
     highlights.length <= 1
@@ -74,12 +72,6 @@ export function LegalPageShell({
             </section>
           ))}
         </article>
-
-        {footerNote ? (
-          <section className="mt-10 border-t border-white/10 pt-6">
-            <div className="text-sm leading-8 text-white/64 sm:text-base">{footerNote}</div>
-          </section>
-        ) : null}
       </div>
     </div>
   );

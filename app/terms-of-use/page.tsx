@@ -209,12 +209,6 @@ export default function TermsOfUsePage() {
       description="By accessing or using this website and services, you agree to the following terms. These terms are meant to set clear expectations, explain how requests are reviewed, and reassure customers that service coordination is handled in a structured and professional manner."
       highlights={highlights}
       sections={sections}
-      footerNote={
-        <>
-          <strong>Final Note:</strong> Keep placeholders updated before going live: effective date,
-          contact email, and company legal name.
-        </>
-      }
     />
   );
 }
