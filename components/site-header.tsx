@@ -28,23 +28,6 @@ function ArrowIcon() {
   );
 }
 
-function MenuIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      className="h-4 w-4"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeWidth="2"
-    >
-      <path d="M6 8.5h12" />
-      <path d="M9 15.5h9" />
-    </svg>
-  );
-}
-
 export function SiteHeader() {
   const pathname = usePathname();
 
@@ -80,7 +63,7 @@ export function SiteHeader() {
               href="/"
               className="brand-mark text-[13px] uppercase text-white sm:absolute sm:left-1/2 sm:-translate-x-1/2"
             >
-              Sheild Force
+              Shield Force
             </Link>
 
             <div className="ml-auto flex items-center gap-2">
