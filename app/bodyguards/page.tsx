@@ -6,6 +6,8 @@ import {
   deploymentProtocol,
 } from "@/components/site-data";
 import { ActionLink, SectionHeading } from "@/components/site-primitives";
+import GuardOnboardinfForm from "@/components/forms/guard-onboarding-form";
+import CustomerEnquiryForm from "@/components/forms/customer-enquiry-form";
 
 const clientProof = [
   "Background check status before deployment approval",
@@ -170,8 +172,8 @@ export default function BodyguardsPage() {
             <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem]">
               Send a bodyguard enquiry with profile preference, location, and deployment brief.
             </h2>
-
-            <form className="mt-6 grid gap-4" action="#">
+            <CustomerEnquiryForm/>
+            {/* <form className="mt-6 grid gap-4" action="#">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2 text-sm text-white/78">
                   <span>Full name</span>
@@ -224,7 +226,7 @@ export default function BodyguardsPage() {
               >
                 Send enquiry
               </button>
-            </form>
+            </form> */}
           </div>
         </article>
 
@@ -238,49 +240,7 @@ export default function BodyguardsPage() {
               The website now shows the registration flow clearly, including the ₹1,500 onboarding
               fee and the information needed for verification.
             </p>
-
-            <form className="mt-6 grid gap-4" action="#">
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Full name</span>
-                <input className="form-input" type="text" placeholder="Enter full name" />
-              </label>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                  <span>Phone</span>
-                  <input className="form-input" type="tel" placeholder="+91" />
-                </label>
-                <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                  <span>Operating base</span>
-                  <input className="form-input" type="text" placeholder="Lucknow, Noida, NCR" />
-                </label>
-              </div>
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Role category</span>
-                <select className="form-select" defaultValue="normal">
-                  <option value="normal">Normal bodyguard</option>
-                  <option value="pistol">Pistol trained</option>
-                  <option value="rifle">Rifle trained</option>
-                </select>
-              </label>
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Verification note</span>
-                <textarea
-                  className="form-textarea"
-                  placeholder="Add experience, licence details, and previous deployment type."
-                />
-              </label>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="text-sm text-[#fff1d8]/74">
-                  Registration charge: <span className="text-white">₹1,500</span>
-                </div>
-                <button
-                  type="submit"
-                  className="rounded-full border border-white/12 bg-black/16 px-4 py-3 text-sm font-medium text-white transition hover:bg-black/24"
-                >
-                  Request listing
-                </button>
-              </div>
-            </form>
+           <GuardOnboardinfForm/>
           </div>
         </article>
       </section>

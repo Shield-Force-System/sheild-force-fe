@@ -1,3 +1,4 @@
+import {Shield,UserCheck,Helicopter,Car,BadgeCheck,User,PackageCheck,Radio} from "lucide-react";
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -111,24 +112,28 @@ export const pricingRows = [
     price: "₹35,000 - ₹40,000 / month",
     location: "UP, NCR",
     eventRate: "₹2,500 / day",
+    icon: Shield,
   },
   {
     service: "Normal Bodyguard",
     price: "₹20,000 - ₹30,000 / month",
     location: "UP, NCR",
     eventRate: "₹1,000 / day",
+    icon: UserCheck,
   },
   {
     service: "Helicopter Rental",
     price: "₹50,000 - ₹350,000 / hour",
     location: "UP, NCR",
     eventRate: "T&C apply",
+    icon: Helicopter,
   },
   {
     service: "Bullet Proof Vehicle - SUV",
     price: "₹10,000 - ₹20,000 / day",
     location: "UP, NCR",
     eventRate: "1000 km max, T&C apply",
+    icon: Car,
   },
 ] as const;
 
@@ -194,21 +199,25 @@ export const deploymentProtocol = [
     title: "Verification First",
     detail:
       "Shield Force checks background, licence, and operating readiness before any profile is shown to a client.",
+      icon: BadgeCheck,
   },
   {
     title: "Client Profile Share",
     detail:
       "Clients receive the guard profile, skill fit, and deployment intent before follow-up confirmation and scheduling.",
+      icon: User,
   },
   {
     title: "Issued By Shield Force",
     detail:
       "Walky talky, dress code, I-cards, safari suit, and deployment accessories are issued to the team by us.",
+       icon: PackageCheck,
   },
   {
     title: "Field Communication",
     detail:
       "Operational communication uses walky talky coordination, route instructions, and escalation reporting during the assignment.",
+      icon: Radio,
   },
 ] as const;
 
