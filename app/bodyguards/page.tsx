@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BodyguardOnboardingForm } from "@/components/bodyguard-onboarding-form";
 import {
   bodyguardProfiles,
   bookingSteps,
   deploymentProtocol,
 } from "@/components/site-data";
+import { listBodyguards, mapBodyguardCard } from "@/lib/shield-force-api";
 import { ActionLink, SectionHeading } from "@/components/site-primitives";
 
 const clientProof = [
@@ -20,7 +22,19 @@ export const metadata: Metadata = {
     "Shield Force bodyguard roster, onboarding flow, and website enquiry capture for personal and armed protection.",
 };
 
-export default function BodyguardsPage() {
+async function getBodyguardProfiles() {
+  try {
+    const records = await listBodyguards({ status: "ACTIVE" });
+    const cards = records.map((record, index) => mapBodyguardCard(record, index));
+    return cards.length > 0 ? cards : bodyguardProfiles;
+  } catch {
+    return bodyguardProfiles;
+  }
+}
+
+export default async function BodyguardsPage() {
+  const profiles = await getBodyguardProfiles();
+
   return (
     <div className="mx-auto w-full max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
       <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,#10181a_0%,#192224_42%,#5f4122_150%)] px-6 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
@@ -37,9 +51,9 @@ export default function BodyguardsPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href="#customer-enquiry">Customer Enquiry</ActionLink>
-              <ActionLink href="#guard-onboarding" variant="ghost">
-                Guard Onboarding
+              <ActionLink href="#guard-onboarding">Onboard as Bodyguard</ActionLink>
+              <ActionLink href="#customer-enquiry" variant="ghost">
+                Request Protection
               </ActionLink>
             </div>
           </div>
@@ -68,7 +82,7 @@ export default function BodyguardsPage() {
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-            {bodyguardProfiles.map((profile) => (
+            {profiles.map((profile) => (
               <article key={profile.name} className="rounded-[1.7rem] border border-white/8 bg-white/4 p-5">
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -235,52 +249,11 @@ export default function BodyguardsPage() {
               Register to be listed on the Shield Force website.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-7 text-[#fff1d8]/82">
-              The website now shows the registration flow clearly, including the ₹1,500 onboarding
-              fee and the information needed for verification.
+              Complete the onboarding steps and upload the required documents for review. Approved
+              bodyguards are moved into the Shield Force roster after verification.
             </p>
 
-            <form className="mt-6 grid gap-4" action="#">
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Full name</span>
-                <input className="form-input" type="text" placeholder="Enter full name" />
-              </label>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                  <span>Phone</span>
-                  <input className="form-input" type="tel" placeholder="+91" />
-                </label>
-                <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                  <span>Operating base</span>
-                  <input className="form-input" type="text" placeholder="Lucknow, Noida, NCR" />
-                </label>
-              </div>
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Role category</span>
-                <select className="form-select" defaultValue="normal">
-                  <option value="normal">Normal bodyguard</option>
-                  <option value="pistol">Pistol trained</option>
-                  <option value="rifle">Rifle trained</option>
-                </select>
-              </label>
-              <label className="space-y-2 text-sm text-[#fff1d8]/82">
-                <span>Verification note</span>
-                <textarea
-                  className="form-textarea"
-                  placeholder="Add experience, licence details, and previous deployment type."
-                />
-              </label>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="text-sm text-[#fff1d8]/74">
-                  Registration charge: <span className="text-white">₹1,500</span>
-                </div>
-                <button
-                  type="submit"
-                  className="rounded-full border border-white/12 bg-black/16 px-4 py-3 text-sm font-medium text-white transition hover:bg-black/24"
-                >
-                  Request listing
-                </button>
-              </div>
-            </form>
+            <BodyguardOnboardingForm />
           </div>
         </article>
       </section>

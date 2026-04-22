@@ -31,19 +31,19 @@ export function SiteFooter() {
           <div className="relative z-10 flex flex-1 flex-col justify-center">
             <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
               <p className="font-display text-[2.3rem] uppercase leading-none tracking-[-0.04em] text-[#1a110a] sm:text-[2.8rem] lg:text-[3.1rem]">
-                Website-Led
+                Shield Force
               </p>
               <h2 className="mt-3 flex flex-wrap items-end justify-center gap-x-3 gap-y-2 font-display text-[3rem] uppercase leading-none tracking-[-0.07em] text-[#1a110a] sm:text-[4rem] lg:text-[4.9rem]">
                 <span className="relative inline-block skew-x-[-10deg] text-[#fff2df]">
-                  Security
+                  Elite Security
                   <span className="absolute inset-x-0 bottom-1 h-3 rounded-full bg-[linear-gradient(90deg,rgba(26,17,10,0.8),rgba(26,17,10,0))] opacity-55" />
                 </span>
-                <span>& Charter Leads</span>
+                <span>& Mobility Command</span>
               </h2>
               <p className="mt-8 max-w-xl text-base leading-8 text-[#2f1f12]/88 sm:text-lg">
-                Browse the listed bodyguards and services, submit your website enquiry, and the
-                Shield Force team follows up directly for helicopter requests, personal security,
-                events, and protected vehicle support.
+                Shield Force delivers bodyguard deployment, event security, and private helicopter
+                coordination with speed, discretion, and operational control for high-priority
+                movement.
               </p>
 
               <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">

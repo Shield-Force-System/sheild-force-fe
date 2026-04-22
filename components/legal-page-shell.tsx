@@ -31,9 +31,10 @@ export function LegalPageShell({
         : "sm:grid-cols-3";
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
-      <div className="w-full">
+    <div className="page-shell page-shell-main">
+      <div className="mx-auto w-full max-w-5xl">
         <header className="border-b border-white/10 pb-8">
+          <p className="eyebrow">{eyebrow}</p>
           <h1 className="display-title mt-4 text-[2.8rem] leading-[0.92] text-white sm:text-[3.6rem]">
             {title}
           </h1>
