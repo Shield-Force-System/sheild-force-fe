@@ -69,12 +69,14 @@ export function ServiceVisual({ variant }: { variant: string }) {
 export function FleetCard({
   name,
   price,
+  details,
   tone,
   href = "/helicopter-booking",
   compact = false,
 }: {
   name: string;
   price: string;
+  details?: string;
   tone: "dark" | "light";
   href?: string;
   compact?: boolean;
@@ -106,6 +108,11 @@ export function FleetCard({
         <div>
           <h3 className="font-display text-[1.65rem] leading-none tracking-[-0.05em]">{name}</h3>
           <p className={`mt-3 text-sm ${dark ? "text-white/65" : "text-black/58"}`}>{price}</p>
+          {details ? (
+            <p className={`mt-2 text-sm leading-6 ${dark ? "text-white/48" : "text-black/52"}`}>
+              {details}
+            </p>
+          ) : null}
         </div>
         <Link
           href={href}
@@ -113,7 +120,7 @@ export function FleetCard({
             dark ? "bg-[#ae7f4f] text-[#120e0a]" : "bg-[#101010] text-[#f8f2e8]"
           }`}
         >
-          Request quote
+          Request charter
           <ArrowIcon />
         </Link>
       </div>

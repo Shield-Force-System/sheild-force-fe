@@ -6,6 +6,7 @@ import {
   HeroRotorcraft,
   ServiceVisual,
 } from "@/components/aviation-showcase";
+import { HelicopterEnquiryForm } from "@/components/helicopter-enquiry-form";
 import { helicopterUseCases } from "@/components/site-data";
 import { ActionLink, ArrowIcon, SectionHeading } from "@/components/site-primitives";
 
@@ -251,61 +252,7 @@ export default function HelicopterBookingPage() {
                     description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
                   />
 
-                  <form className="mt-7 grid gap-4" action="#">
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Full name</span>
-                        <input className="form-input" type="text" placeholder="Enter your full name" />
-                      </label>
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Phone number</span>
-                        <input className="form-input" type="tel" placeholder="+91 98765 43210" />
-                      </label>
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Departure</span>
-                        <input className="form-input" type="text" placeholder="Lucknow, Noida, NCR" />
-                      </label>
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Arrival</span>
-                        <input className="form-input" type="text" placeholder="Destination city or helipad" />
-                      </label>
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Flight date</span>
-                        <input className="form-input" type="date" />
-                      </label>
-                      <label className="space-y-2 text-sm text-white/78">
-                        <span>Passenger count</span>
-                        <input className="form-input" type="number" min="1" placeholder="4" />
-                      </label>
-                    </div>
-                    <label className="space-y-2 text-sm text-white/78">
-                      <span>Service type</span>
-                      <select className="form-select" defaultValue="charter">
-                        <option value="charter">Private charter</option>
-                        <option value="airport">Airport pickup and drop</option>
-                        <option value="rally">Politician rally movement</option>
-                        <option value="celebrity">Celebrity event movement</option>
-                        <option value="premium">Premium intercity transfer</option>
-                      </select>
-                    </label>
-                    <label className="space-y-2 text-sm text-white/78">
-                      <span>Operational notes</span>
-                      <textarea
-                        className="form-textarea"
-                        placeholder="Add timing, ground escort requirement, event schedule, or protected vehicle need."
-                      />
-                    </label>
-                    <button
-                      type="submit"
-                      className="w-fit rounded-full bg-[var(--brand)] px-4 py-3 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
-                    >
-                      Send helicopter enquiry
-                    </button>
-                  </form>
+                  <HelicopterEnquiryForm />
                 </div>
               </article>
 
