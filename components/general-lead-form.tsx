@@ -9,15 +9,20 @@ import {
 } from "@/lib/form-utils";
 
 const serviceInterestOptions = [
-  "Executive Protection",
-  "Armed Security - Rifle",
-  "Armed Security - Pistol",
-  "Event & VIP Security",
+  "VIP security",
+  "Personal bodyguard services",
+  "Armed and unarmed security deployment",
+  "Event and political movement security",
+  "Helicopter rental and assisted mobility",
   "Protected Vehicle Requirement",
-  "Private Security Consultation",
+  "General security consultation",
 ] as const;
 
-export function GeneralLeadForm() {
+export function GeneralLeadForm({
+  className = "mt-6 grid gap-4",
+}: {
+  className?: string;
+}) {
   const [feedback, setFeedback] = useState<SubmissionFeedback | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -71,7 +76,7 @@ export function GeneralLeadForm() {
   }
 
   return (
-    <form className="mt-6 grid gap-4" onSubmit={handleSubmit}>
+    <form className={className} onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Full name</span>

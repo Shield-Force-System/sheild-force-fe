@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     "Shield Force services covering armed bodyguards, personal protection, helicopter rental, events, and protected vehicles.",
 };
 
+const serviceAudiences = [
+  "Corporate Executives",
+  "High-Net-Worth Individuals",
+  "Event Organisers",
+  "Public Figures & Celebrities",
+  "Families Requiring Personal Security",
+] as const;
+
 export default function ServicesPage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
@@ -23,15 +31,14 @@ export default function ServicesPage() {
           <div>
             <p className="eyebrow">Service Map</p>
             <h1 className="display-title mt-5 max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-              Six commercial fronts, one Shield Force operating standard.
+             One Platform. Complete Protection / Security and Mobility. Unified
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-              The services page is structured around what clients actually ask for first: protection,
-              mobility, event control, and protected transport.
+              From elite security services to private air mobility, Shield Force delivers integrated solutions for safety, movement, and control seamlessly managed under one command.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href="/bodyguards">Choose Bodyguards</ActionLink>
+              <ActionLink href="/bodyguards">Request Protection</ActionLink>
               <ActionLink href="/helicopter-booking" variant="ghost">
                 Open Helicopter Booking
               </ActionLink>
@@ -53,7 +60,7 @@ export default function ServicesPage() {
         <div className="relative z-10">
           <SectionHeading
             eyebrow="Service Breakdown"
-            title="Each category now has pricing cues, usage context, and direct paths into enquiry."
+            title="Our Services"
             description="This page acts as the operational catalogue for the live website and lead flow."
           />
 
@@ -121,13 +128,39 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
+        <div className="relative z-10">
+          <SectionHeading
+            eyebrow="Who Do We Serve"
+            title="Shield Force is Designed For"
+            description="Our deployments are built for clients who need dependable protection, discreet coordination, and controlled movement support."
+          />
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+            {serviceAudiences.map((audience, index) => (
+              <article
+                key={audience}
+                className={`rounded-[1.5rem] border border-white/8 p-5 ${
+                  index % 2 === 0 ? "bg-white/4" : "bg-black/14"
+                }`}
+              >
+                <div className="text-[0.72rem] uppercase tracking-[0.22em] text-[var(--brand-strong)]">
+                  0{index + 1}
+                </div>
+                <h2 className="mt-3 text-lg font-semibold leading-7 text-white">{audience}</h2>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mt-6 grid gap-4 xl:grid-cols-[0.98fr_1.02fr]">
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <SectionHeading
-              eyebrow="Commercial Grid"
-              title="The initial price table stays visible, simple, and ready for quote escalation."
-              description="It gives visitors a fast commercial snapshot before they move into enquiry forms."
+              eyebrow="Our Standard pricing"
+              title="Pricing may vary with different factors as duration, risk factor and on events!"
+              description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
             />
 
             <div className="table-shell mt-7 overflow-x-auto">
@@ -159,7 +192,7 @@ export default function ServicesPage() {
           <div className="relative z-10">
             <p className="eyebrow text-white/58">Operating Notes</p>
             <h2 className="display-title mt-4 max-w-[14ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-              Service pages only work if they also explain readiness, not just listings.
+             How Shield Force Works
             </h2>
 
             <div className="mt-6 grid gap-4">

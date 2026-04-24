@@ -68,7 +68,7 @@ export const serviceCards = [
       alt: "Shield Force helicopter rental",
     },
     summary:
-      "Helicopter booking for airport pick-up and drop, celebrity movement, politician rally logistics, and urgent transfers.",
+      "On-demand helicopter access for urgent, secure, and time-critical travel requirements. Operated with strict safety standards.",
     price: "₹50,000 - ₹350,000 / hour",
     support: "T&C apply",
     location: "UP, NCR",
@@ -83,7 +83,7 @@ export const serviceCards = [
       alt: "Shield Force events and celebrity security",
     },
     summary:
-      "Managed deployments for celebrity events, public gatherings, airport reception, and politician rally support.",
+      "Comprehensive security management for events, ensuring controlled access, crowd safety, and VIP protection.",
     price: "Daily and monthly plans",
     support: "Armed and unarmed teams available",
     location: "UP, NCR",
@@ -191,24 +191,24 @@ export const bodyguardProfiles = [
 
 export const deploymentProtocol = [
   {
-    title: "Verification First",
+    title: "Verified Before Deployment",
     detail:
-      "Shield Force checks background, licence, and operating readiness before any profile is shown to a client.",
+      "All personnel undergo background verification, license checks, and readiness validation.",
   },
   {
-    title: "Client Profile Share",
+    title: "Operational Readiness",
     detail:
-      "Clients receive the guard profile, skill fit, and deployment intent before follow-up confirmation and scheduling.",
+      "Every deployment is planned with route awareness, timing coordination, and communication protocols.",
   },
   {
-    title: "Issued By Shield Force",
+    title: "Integrated Mobility",
     detail:
-      "Walky talky, dress code, I-cards, safari suit, and deployment accessories are issued to the team by us.",
+      "We combine ground security with transport and helicopter coordination for seamless movement.",
   },
   {
-    title: "Field Communication",
+    title: "Manual Expert Oversight",
     detail:
-      "Operational communication uses walky talky coordination, route instructions, and escalation reporting during the assignment.",
+      "No automated assignments every request is reviewed and executed by trained professionals.",
   },
 ] as const;
 
@@ -258,8 +258,8 @@ export const helicopterUseCases = [
 ] as const;
 
 export const serviceSupportNotes = [
-  "All customer enquiries come through website forms and are followed up manually by the Shield Force team.",
-  "All listed bodyguards are intended to be in-house Shield Force employees.",
+  "Client Requests, In-House Professionals, Onboarding Process, Mobility Coordination, Equipment & Support. Add heading in the cards: ",
+  "All assignments are handled with strict confidentiality protocols, ensuring complete privacy for every client and operation.",
   "Any eligible bodyguard can onboard through the website with a ₹1,500 registration charge.",
   "Customer cab requirements are planned through a Daftar Route tie-up.",
   "Security accessory sales start with walky talky procurement, with delivery dates to be finalised.",

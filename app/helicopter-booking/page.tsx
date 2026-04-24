@@ -90,14 +90,15 @@ export default function HelicopterBookingPage() {
 
                 <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
                   <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-                    <span className="block">Private helicopter</span>
-                    <span className="block">booking with</span>
-                    <span className="block">direct follow-up</span>
+                    <span className="block">Private helicopter Rental - On Demand</span>
+                    {/* <span className="block"></span> */}
+                    <span className="block"></span>
                   </h1>
 
                   <p className="mt-7 max-w-[18rem] text-sm leading-6 text-white/58 sm:text-[14px]">
-                    Browse the helicopter options, submit your route through the website form, and
-                    Shield Force follows up with feasibility, aircraft fit, and pricing.
+                   Skip traffic. Save time. Arrive in style.
+Charter premium helicopters for business, events, or personal travel with seamless coordination from request to landing.
+
                   </p>
 
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -145,7 +146,7 @@ export default function HelicopterBookingPage() {
                   <div>
                     <p className="text-xs uppercase tracking-[0.3em] text-white/36">Premium services</p>
                     <h2 className="mt-4 max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
-                      Helicopter enquiries run through one website flow with direct team follow-up.
+                      A Dedicated Charter Experience
                     </h2>
                   </div>
                   <div className="max-w-md">
@@ -248,7 +249,7 @@ export default function HelicopterBookingPage() {
                 <div className="relative z-10">
                   <SectionHeading
                     eyebrow="Flight Enquiry"
-                    title="The helicopter page ends in a simple website form for direct team follow-up."
+                    title="Plan Your Charter "
                     description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
                   />
 
@@ -260,7 +261,7 @@ export default function HelicopterBookingPage() {
                 <div className="relative z-10">
                   <p className="eyebrow text-[#fff0cf]/70">Commercial Bands</p>
                   <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-                    Pricing and use case framing is visible before the user even submits an enquiry.
+                    Charter Pricing Overview
                   </h2>
 
                   <div className="mt-6 space-y-4">
@@ -280,7 +281,7 @@ export default function HelicopterBookingPage() {
                 <div className="relative z-10">
                   <p className="eyebrow text-white/58">Charter Process</p>
                   <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-                    Flight movement is presented as an operational chain, not just a pricing widget.
+                    How It Works
                   </h2>
                   <div className="mt-6 space-y-4">
                     {helicopterFlow.map((item, index) => (
@@ -299,29 +300,31 @@ export default function HelicopterBookingPage() {
                 <div className="relative z-10">
                   <SectionHeading
                     eyebrow="Linked Services"
-                    title="Helicopter movement can now be shown alongside ground escort and secure arrival support."
-                    description="That keeps the helicopter page useful for real scenarios like celebrity events, rally schedules, or high-risk airport movement."
+                    title="Built for High-Stakes Movement:"
+                    description="Shield Force integrates air mobility with on-ground protection and transport ensuring a seamless, secure experience"
                   />
 
                   <div className="mt-7 grid gap-4 sm:grid-cols-2">
                     <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
-                      <div className="text-lg font-semibold text-white">Escort add-on</div>
+                      <div className="text-lg font-semibold text-white">VIP & Celebrity Airport Transfers</div>
                       <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
                         Pair helicopter arrival with personal or armed bodyguard support on the ground.
                       </div>
                     </div>
                     <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
-                      <div className="text-lg font-semibold text-white">Protected vehicle add-on</div>
+                      <div className="text-lg font-semibold text-white">Political Rally & Campaign Travel</div>
                       <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
                         Continue high-sensitivity movement with an on-demand bullet proof SUV when needed.
                       </div>
                     </div>
-                    {helicopterUseCases.slice(0, 2).map((item) => (
-                      <div key={item} className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
-                        <div className="text-lg font-semibold text-white">Use case</div>
-                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">{item}</div>
+                      <div  className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                        <div className="text-lg font-semibold text-white">Corporate Executive Movement</div>
+                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">Airport pickup and drop for VIP, celebrity, and executive travel</div>
                       </div>
-                    ))}
+                        <div  className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                        <div className="text-lg font-semibold text-white">High-Security or Time-Sensitive Operations</div>
+                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">Politician rally movement with time-sensitive land-to-air coordination</div>
+                      </div>
                   </div>
 
                   <div className="mt-7">
