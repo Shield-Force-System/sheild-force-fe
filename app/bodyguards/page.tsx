@@ -43,15 +43,14 @@ export default async function BodyguardsPage() {
           <div>
             <p className="eyebrow">Bodyguard Page</p>
             <h1 className="display-title mt-5 max-w-[11ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-              Choose a guard, review the profile, then send the enquiry.
+              Select Your Protection. We Handle the Rest.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-              This page now supports both sides of the Shield Force bodyguard flow: guards can onboard,
-              and customers can browse listed profiles before sending a request for follow-up.
+             Browse verified Shield Force professionals, review profiles, and submit your requirement. Every deployment is reviewed, planned, and executed by our command team.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href="#guard-onboarding">Onboard as Bodyguard</ActionLink>
+              <ActionLink href="#guard-onboarding">View Professionals</ActionLink>
               <ActionLink href="#customer-enquiry" variant="ghost">
                 Request Protection
               </ActionLink>
@@ -77,8 +76,8 @@ export default async function BodyguardsPage() {
         <div className="relative z-10">
           <SectionHeading
             eyebrow="Live Roster"
-            title="The website now presents selectable bodyguard profiles instead of a generic enquiry-only wall."
-            description="These profiles help customers review options and send a lead with a preferred guard, rather than relying on a blind callback request."
+            title="Verified Professionals. Ready for Deployment."
+            description="Each profile represents a trained, background-verified professional operating under Shield Force protocols and supervision."
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
@@ -139,7 +138,7 @@ export default async function BodyguardsPage() {
           <div className="relative z-10">
           <SectionHeading
             eyebrow="How Booking Works"
-            title="Customer enquiries follow a short lead flow instead of an instant checkout."
+            title="How deployment works"
             description="The page now makes it clear how a client picks a guard, submits the form, and gets a follow-up from the team."
           />
 
@@ -163,7 +162,7 @@ export default async function BodyguardsPage() {
           <div className="relative z-10">
             <p className="eyebrow text-white/58">Field Standard</p>
             <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-              The bodyguard page also reinforces what every deployment unit carries and follows.
+              Every Deployment Includes 
             </h2>
             <div className="mt-6 space-y-4">
               {deploymentProtocol.map((item) => (

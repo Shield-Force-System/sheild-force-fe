@@ -118,7 +118,7 @@ export default function Home() {
             >
               <SectionHeading
                 eyebrow="Service Coverage"
-                title="Every Shield Force service now has a clear visual place on the homepage."
+                title="A complete suite of professional security and movement solutions"
                 description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
               />
 
@@ -178,8 +178,9 @@ export default function Home() {
                 <div className="relative z-10">
                   <p className="text-xs uppercase tracking-[0.28em] text-[#fff0cf]/70">Readiness Layer</p>
                   <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-                    Operations are presented around verified deployment, not generic staffing.
+                    
                   </h2>
+                  <p>Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection.</p>
 
                   <div className="mt-6 space-y-4">
                     {deploymentProtocol.map((item) => (
@@ -196,9 +197,9 @@ export default function Home() {
             <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
               <div className="relative z-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
                 <div>
-                  <p className="eyebrow">Launch Notes</p>
+                  <p className="eyebrow">INSIDE SHIELD FORCE</p>
                   <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
-                    The homepage now sells the full command model behind Shield Force.
+                     Every Shield Force assignment is executed through a refined operational model ensuring consistency, discretion, and complete control.
                   </h2>
                 </div>
 

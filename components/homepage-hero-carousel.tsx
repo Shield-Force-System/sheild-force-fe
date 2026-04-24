@@ -62,7 +62,7 @@ const slides = [
   },
   {
     id: "04",
-    title: "Events & Celebrity",
+    title: "Event & VIP Security",
     lines: ["Events", "& Celebrity"],
     description:
       "Airport pickup, public events, rally support, and stage-side control.",
