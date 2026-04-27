@@ -19,7 +19,7 @@ export const serviceCards = [
     href: "/services#armed-rifle",
     tag: "High Visibility",
     image: {
-      src: "/Images/armed-security.svg",
+      src: "/Images/ArmedSecurity1.png",
       alt: "Shield Force armed rifle security deployment",
     },
     summary:
@@ -34,7 +34,7 @@ export const serviceCards = [
     href: "/services#armed-pistol",
     tag: "Close Protection",
     image: {
-      src: "/Images/armed-security.svg",
+      src: "/Images/ArmedSecurity2.png",
       alt: "Shield Force close protection armed security",
     },
     summary:
@@ -79,7 +79,7 @@ export const serviceCards = [
     href: "/services#events-security",
     tag: "Crowd-Control Ops",
     image: {
-      src: "/Images/events-security.svg",
+      src: "/Images/Events1.png",
       alt: "Shield Force events and celebrity security",
     },
     summary:
@@ -94,7 +94,7 @@ export const serviceCards = [
     href: "/services#on-demand-vehicle",
     tag: "Protected Transport",
     image: {
-      src: "/Images/protected-vehicle.svg",
+      src: "/Images/Car.png",
       alt: "Shield Force protected vehicle",
     },
     summary:
@@ -263,4 +263,121 @@ export const serviceSupportNotes = [
   "Any eligible bodyguard can onboard through the website with a ₹1,500 registration charge.",
   "Customer cab requirements are planned through a Daftar Route tie-up.",
   "Security accessory sales start with walky talky procurement, with delivery dates to be finalised.",
+] as const;
+
+export const frequentlyAskedQuestions = [
+  {
+    category: "Services",
+    question: "What services does Shield Force offer?",
+    answer:
+      "Shield Force offers professional security services in India, including trained bodyguards, VIP protection, event security, secure mobility solutions, and helicopter charter coordination through a single integrated platform.",
+  },
+  {
+    category: "Services",
+    question: "Who can hire Shield Force services?",
+    answer:
+      "Our services are designed for individuals, corporates, celebrities, events, and high-net-worth clients who require reliable and professional protection.",
+  },
+  {
+    category: "Protection",
+    question: "How are your bodyguards trained and verified?",
+    answer:
+      "All professionals are in-house and undergo strict background checks, training, and onboarding protocols to ensure the highest level of safety, discipline, and professionalism.",
+  },
+  {
+    category: "Protection",
+    question: "Can I customize my security requirements?",
+    answer:
+      "Yes. Every assignment is customised based on your needs, whether it is personal protection, event coverage, or travel security.",
+  },
+  {
+    category: "Booking",
+    question: "How does the booking process work?",
+    answer:
+      "You can request services directly through our platform. Once submitted, the requirements are assessed, our team gets back to you, the right professionals are assigned, and coordination and deployment are handled end to end.",
+  },
+  {
+    category: "Services",
+    question: "Is my information kept confidential?",
+    answer:
+      "We follow strict confidential security protocols to ensure complete privacy for all clients, especially for high-profile and VIP assignments.",
+  },
+  {
+    category: "Mobility",
+    question: "Do you provide security for travel and mobility?",
+    answer:
+      "Yes. We offer end-to-end mobility solutions, including secure transportation, route planning, and coordination through our network partners.",
+  },
+  {
+    category: "Booking",
+    question: "What is the cost of hiring your services?",
+    answer:
+      "The cost of hiring security services or bodyguards depends on duration, location, risk level, and the number of personnel. You can request a custom security quote through our platform.",
+  },
+  {
+    category: "Booking",
+    question: "How quickly can services be deployed?",
+    answer:
+      "We aim for fast turnaround and quick deployment, depending on availability and location.",
+  },
+  {
+    category: "Protection",
+    question: "Can bodyguards join your platform?",
+    answer:
+      "Yes. Trained individuals can apply to join our platform. We onboard only verified and skilled security professionals after a strict screening process.",
+  },
+  {
+    category: "Protection",
+    question: "How can I hire bodyguards or personal security?",
+    answer:
+      "You can easily hire bodyguards online through our platform. Simply submit your requirements, and we will assign trained personal security officers based on your needs and location.",
+  },
+  {
+    category: "Protection",
+    question: "Can I book security for events or corporate functions?",
+    answer:
+      "Absolutely. We provide event security services for corporate events, private functions, weddings, and large gatherings, ensuring crowd control and safety.",
+  },
+  {
+    category: "Booking",
+    question: "How do I book security services with Shield Force?",
+    answer:
+      "To book security services, click on “Request Protection” or “Send Enquiry,” share your details, and our team will handle the rest.",
+  },
+  {
+    category: "Services",
+    question: "Where are Shield Force services available?",
+    answer:
+      "At present, Shield Force operates in Lucknow and Delhi NCR, delivering trusted VIP protection and security services. As demand grows, we are expanding into new cities to offer our services across more regions in India.",
+  },
+  {
+    category: "Helicopter",
+    question: "How can I book a helicopter charter with Shield Force?",
+    answer:
+      "You can book a helicopter charter in India through our platform by submitting your travel details. Our team handles aircraft availability, permissions, and coordination for a seamless experience.",
+  },
+  {
+    category: "Helicopter",
+    question: "How much does it cost to hire a helicopter in India?",
+    answer:
+      "The cost of helicopter rental in India depends on factors like distance, duration, aircraft type, and permissions. Contact us for a custom helicopter charter quote based on your requirements.",
+  },
+  {
+    category: "Helicopter",
+    question: "Can helicopter services be combined with security arrangements?",
+    answer:
+      "Absolutely. We offer integrated helicopter and VIP security services, including ground coordination, bodyguards, and secure transport.",
+  },
+  {
+    category: "Helicopter",
+    question: "Can I book a helicopter for same-day travel?",
+    answer:
+      "Same-day helicopter charter bookings may be possible depending on availability and permissions. We recommend contacting us as early as possible for urgent requests.",
+  },
+  {
+    category: "Helicopter",
+    question: "Do you provide helicopter services for weddings and events?",
+    answer:
+      "Yes. We specialize in helicopter bookings for weddings, VIP entries, and special events, adding a premium and memorable experience.",
+  },
 ] as const;

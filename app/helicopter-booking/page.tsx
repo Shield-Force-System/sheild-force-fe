@@ -7,7 +7,6 @@ import {
   ServiceVisual,
 } from "@/components/aviation-showcase";
 import { HelicopterEnquiryForm } from "@/components/helicopter-enquiry-form";
-import { helicopterUseCases } from "@/components/site-data";
 import { ActionLink, ArrowIcon, SectionHeading } from "@/components/site-primitives";
 
 const helicopterServices = [
@@ -144,8 +143,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="flex flex-col justify-between gap-6">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/36">Premium services</p>
-                    <h2 className="mt-4 max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
+                    <h2 className="max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
                       A Dedicated Charter Experience
                     </h2>
                   </div>
@@ -220,8 +218,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-white/36">Fleet selection</p>
-                  <h2 className="mt-4 max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem]">
+                  <h2 className="max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem]">
                     Our fleet of luxurious helicopters
                   </h2>
                 </div>
@@ -248,7 +245,6 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <article id="flight-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    eyebrow="Flight Enquiry"
                     title="Plan Your Charter "
                     description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
                   />
@@ -259,8 +255,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
 
               <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
                 <div className="relative z-10">
-                  <p className="eyebrow text-[#fff0cf]/70">Commercial Bands</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
                     Charter Pricing Overview
                   </h2>
 
@@ -279,8 +274,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
             <section className="mt-6 grid gap-4 xl:grid-cols-[0.96fr_1.04fr]">
               <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
                 <div className="relative z-10">
-                  <p className="eyebrow text-white/58">Charter Process</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
                     How It Works
                   </h2>
                   <div className="mt-6 space-y-4">
@@ -299,7 +293,6 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    eyebrow="Linked Services"
                     title="Built for High-Stakes Movement:"
                     description="Shield Force integrates air mobility with on-ground protection and transport ensuring a seamless, secure experience"
                   />

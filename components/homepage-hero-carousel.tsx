@@ -19,12 +19,12 @@ const slides = [
       alt: "Shield Force bodyguard",
       width: 2000,
       height: 2000,
-      frameClassName: "mx-auto w-[72%] sm:w-[68%] lg:w-[62%]",
+      frameClassName: "mx-auto w-[62%] sm:w-[58%] lg:ml-auto lg:mr-0 lg:w-[52%]",
     },
     accent:
       "bg-[radial-gradient(circle_at_84%_16%,rgba(255,211,155,0.16),transparent_30%),radial-gradient(circle_at_12%_80%,rgba(255,255,255,0.08),transparent_22%)]",
   },
-    {
+  {
     id: "02",
     title: "Helicopter Rental",
     lines: ["Helicopter", "Rental"],
@@ -37,7 +37,7 @@ const slides = [
       alt: "Shield Force helicopter charter",
       width: 1920,
       height: 1080,
-      frameClassName: "w-full",
+      frameClassName: "mx-auto w-[92%] sm:w-[88%] lg:ml-auto lg:mr-0 lg:w-[82%]",
     },
     accent:
       "bg-[radial-gradient(circle_at_82%_18%,rgba(156,182,206,0.18),transparent_28%),radial-gradient(circle_at_14%_76%,rgba(255,214,160,0.08),transparent_22%)]",
@@ -51,11 +51,11 @@ const slides = [
     href: "/services#armed-rifle",
     cta: "View armed cover",
     image: {
-      src: "/Images/armed-security.svg",
+      src: "/Images/ArmedSecurity1.png",
       alt: "Shield Force armed security response",
       width: 1200,
       height: 720,
-      frameClassName: "w-full",
+      frameClassName: "mx-auto w-[82%] sm:w-[78%] lg:ml-auto lg:mr-0 lg:w-[72%]",
     },
     accent:
       "bg-[radial-gradient(circle_at_82%_18%,rgba(214,122,87,0.18),transparent_28%),radial-gradient(circle_at_14%_78%,rgba(255,255,255,0.08),transparent_22%)]",
@@ -69,11 +69,11 @@ const slides = [
     href: "/services#events-security",
     cta: "Open event support",
     image: {
-      src: "/Images/events-security.svg",
+      src: "/Images/Events1.png",
       alt: "Shield Force events and celebrity security deployment",
       width: 1200,
       height: 720,
-      frameClassName: "w-full",
+      frameClassName: "mx-auto w-[82%] sm:w-[78%] lg:ml-auto lg:mr-0 lg:w-[72%]",
     },
     accent:
       "bg-[radial-gradient(circle_at_84%_16%,rgba(135,144,111,0.22),transparent_30%),radial-gradient(circle_at_12%_80%,rgba(255,255,255,0.08),transparent_22%)]",
@@ -87,11 +87,11 @@ const slides = [
     href: "/services#on-demand-vehicle",
     cta: "Request vehicle",
     image: {
-      src: "/Images/protected-vehicle.svg",
+      src: "/Images/Car.png",
       alt: "Shield Force protected vehicle convoy",
       width: 1200,
       height: 720,
-      frameClassName: "w-full",
+      frameClassName: "mx-auto w-[82%] sm:w-[78%] lg:ml-auto lg:mr-0 lg:w-[72%]",
     },
     accent:
       "bg-[radial-gradient(circle_at_84%_16%,rgba(209,161,93,0.2),transparent_30%),radial-gradient(circle_at_12%_80%,rgba(255,255,255,0.08),transparent_22%)]",
@@ -129,11 +129,9 @@ export function HomepageHeroCarousel() {
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
 
         <div className="relative z-20 max-w-[30rem] pt-2 sm:pt-4 lg:pt-10">
-
           <div key={activeSlide.id} className="transition duration-500 ease-out">
             <h1 className="hero-title mt-4 text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-              <span className="block">{activeSlide.lines[0]}</span>
-              <span className="block">{activeSlide.lines[1]}</span>
+              <span className="block whitespace-nowrap">{`${activeSlide.lines[0]} ${activeSlide.lines[1]}`}</span>
             </h1>
 
             <p className="mt-7 max-w-[25rem] text-sm leading-6 text-white/58 sm:text-[14px]">
@@ -192,17 +190,17 @@ export function HomepageHeroCarousel() {
           </div>
         </div>
 
-        <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0">
+        <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:-right-6 lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0 xl:-right-8">
           <div key={activeSlide.id} className={`transition duration-500 ease-out ${activeSlide.image.frameClassName}`}>
-          <Image
-            src={activeSlide.image.src}
-            alt={activeSlide.image.alt}
-            width={activeSlide.image.width}
-            height={activeSlide.image.height}
-            priority
-            sizes="(min-width: 1024px) 79vw, (min-width: 640px) 112vw, 118vw"
-            className="h-auto w-full object-contain drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
-          />
+            <Image
+              src={activeSlide.image.src}
+              alt={activeSlide.image.alt}
+              width={activeSlide.image.width}
+              height={activeSlide.image.height}
+              priority
+              sizes="(min-width: 1024px) 79vw, (min-width: 640px) 112vw, 118vw"
+              className="h-auto w-full object-contain object-bottom lg:object-right-bottom drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
+            />
           </div>
         </div>
 

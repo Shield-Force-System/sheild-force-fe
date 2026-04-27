@@ -107,7 +107,7 @@ function ServicePanel({
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
+      <main className="mx-auto w-full max-w-[1720px] px-4 pb-4 pt-0 sm:px-6 sm:pb-6 sm:pt-0 lg:px-8 2xl:px-10">
         <div className="mx-auto grid w-full gap-5">
           <div className="space-y-5">
             <HomepageHeroCarousel />
@@ -117,7 +117,6 @@ export default function Home() {
               className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
             >
               <SectionHeading
-                eyebrow="Service Coverage"
                 title="A complete suite of professional security and movement solutions"
                 description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
               />
@@ -144,7 +143,6 @@ export default function Home() {
               <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    // eyebrow="Pricing Snapshot"
                     title="Core website pricing remains visible for the main service lines."
                     description="The initial phase is enquiry-led, but the homepage still gives users enough commercial detail to understand monthly, hourly, and event-based service bands."
                   />
@@ -176,10 +174,6 @@ export default function Home() {
 
               <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
                 <div className="relative z-10">
-                  <p className="text-xs uppercase tracking-[0.28em] text-[#fff0cf]/70">Readiness Layer</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-                    
-                  </h2>
                   <p>Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection.</p>
 
                   <div className="mt-6 space-y-4">
@@ -197,8 +191,7 @@ export default function Home() {
             <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
               <div className="relative z-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
                 <div>
-                  <p className="eyebrow">INSIDE SHIELD FORCE</p>
-                  <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
                      Every Shield Force assignment is executed through a refined operational model ensuring consistency, discretion, and complete control.
                   </h2>
                 </div>

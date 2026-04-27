@@ -11,13 +11,11 @@ type LegalSection = {
 };
 
 export function LegalPageShell({
-  eyebrow,
   title,
   description,
   highlights,
   sections,
 }: {
-  eyebrow: string;
   title: string;
   description: string;
   highlights: readonly Highlight[];
@@ -34,8 +32,7 @@ export function LegalPageShell({
     <div className="page-shell page-shell-main">
       <div className="mx-auto w-full max-w-5xl">
         <header className="border-b border-white/10 pb-8">
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 className="display-title mt-4 text-[2.8rem] leading-[0.92] text-white sm:text-[3.6rem]">
+          <h1 className="display-title text-[2.8rem] leading-[0.92] text-white sm:text-[3.6rem]">
             {title}
           </h1>
           <p className="mt-6 text-base leading-8 text-white/74 sm:text-lg">

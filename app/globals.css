@@ -291,14 +291,6 @@ a {
   animation: panel-drift 18s linear infinite;
 }
 
-.eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
-  line-height: 1;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 .drift-slow {
   animation: drift-slow 9s ease-in-out infinite;
 }

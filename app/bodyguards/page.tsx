@@ -41,8 +41,7 @@ export default async function BodyguardsPage() {
         <div className="absolute -right-16 top-8 h-64 w-64 rounded-full bg-[rgba(209,161,93,0.18)] blur-3xl" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <p className="eyebrow">Bodyguard Page</p>
-            <h1 className="display-title mt-5 max-w-[11ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
+            <h1 className="display-title max-w-[11ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
               Select Your Protection. We Handle the Rest.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
@@ -59,8 +58,7 @@ export default async function BodyguardsPage() {
 
           <div className="section-card rounded-[1.9rem] px-5 py-5 sm:px-6">
             <div className="relative z-10">
-              <p className="eyebrow">Selection Layer</p>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {clientProof.map((item) => (
                   <div key={item} className="rounded-[1.3rem] border border-white/8 bg-white/4 px-4 py-4 text-sm leading-6 text-[var(--ink-muted)]">
                     {item}
@@ -75,7 +73,6 @@ export default async function BodyguardsPage() {
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
         <div className="relative z-10">
           <SectionHeading
-            eyebrow="Live Roster"
             title="Verified Professionals. Ready for Deployment."
             description="Each profile represents a trained, background-verified professional operating under Shield Force protocols and supervision."
           />
@@ -136,11 +133,10 @@ export default async function BodyguardsPage() {
       <section className="mt-6 grid gap-4 xl:grid-cols-[0.98fr_1.02fr]">
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-          <SectionHeading
-            eyebrow="How Booking Works"
-            title="How deployment works"
-            description="The page now makes it clear how a client picks a guard, submits the form, and gets a follow-up from the team."
-          />
+            <SectionHeading
+              title="How deployment works"
+              description="The page now makes it clear how a client picks a guard, submits the form, and gets a follow-up from the team."
+            />
 
             <div className="mt-7 space-y-4">
               {bookingSteps.map((step, index) => (
@@ -160,8 +156,7 @@ export default async function BodyguardsPage() {
 
         <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow text-white/58">Field Standard</p>
-            <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
               Every Deployment Includes 
             </h2>
             <div className="mt-6 space-y-4">
@@ -179,8 +174,7 @@ export default async function BodyguardsPage() {
       <section className="mt-6 grid gap-4 lg:grid-cols-2">
         <article id="customer-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow">Customer Enquiry</p>
-            <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem]">
               Send a bodyguard enquiry with profile preference, location, and deployment brief.
             </h2>
 
@@ -243,9 +237,8 @@ export default async function BodyguardsPage() {
 
         <article id="guard-onboarding" className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow text-[#fff0cf]/70">Guard Onboarding</p>
-            <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.94] sm:text-[2.5rem]">
-              Register to be listed on the Shield Force website.
+            <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.94] sm:text-[2.5rem]">
+              Join Shield Force- One of the leading Elite Security organization
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-7 text-[#fff1d8]/82">
               Complete the onboarding steps and upload the required documents for review. Approved

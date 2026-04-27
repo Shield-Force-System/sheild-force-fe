@@ -56,8 +56,7 @@ export default function AboutPage() {
         <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(239,201,139,0.16),transparent_28%)]" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="eyebrow">About Shield Force</p>
-            <h1 className="display-title mt-5 max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
+            <h1 className="display-title max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
              Trusted for VIP, political & high-risk movement
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
@@ -77,8 +76,7 @@ export default function AboutPage() {
 
           <div className="section-card rounded-[1.9rem] px-5 py-5 sm:px-6">
             <div className="relative z-10">
-              <p className="eyebrow">Operating Principles</p>
-              <div className="mt-5">
+              <div>
                 <DetailList items={operatingPoints} />
               </div>
             </div>
@@ -89,8 +87,7 @@ export default function AboutPage() {
       <section className="mt-6 grid gap-4 xl:grid-cols-[1.08fr_0.92fr]">
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow">Who We Are</p>
-            <h2 className="display-title mt-4 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
               Built for Security-Critical Operations
             </h2>
             <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
@@ -121,8 +118,7 @@ export default function AboutPage() {
 
         <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow text-[#fff0cf]/70">Where We Operate</p>
-            <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
               Focused Coverage. Strong Ground Presence.
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#fff1d8]/80 sm:text-base">
@@ -163,7 +159,6 @@ export default function AboutPage() {
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
         <div className="relative z-10">
           <SectionHeading
-            eyebrow="Deployment Standard"
             title="Designed for Real-World Security Scenarios"
             description="This section explains the operational standard that sits behind the website experience."
           />
@@ -182,8 +177,7 @@ export default function AboutPage() {
       <section className="mt-6 grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
         <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow text-white/58">DEPLOYMENT MODEL</p>
-            <h2 className="display-title mt-4 max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
              Shield Force operates on a structured deployment model to ensure reliability and clarity at every stage.
             </h2>
             <div className="mt-6">
@@ -194,8 +188,7 @@ export default function AboutPage() {
 
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow">Lead Flow</p>
-            <h2 className="display-title mt-4 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
               How We Handle Enquiries
             </h2>
 
