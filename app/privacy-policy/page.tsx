@@ -187,7 +187,6 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <LegalPageShell
-      eyebrow="Legal"
       title="Privacy Policy"
       description="This page explains how information submitted through the Shield Force website is collected, used, and protected. It is written to give users confidence that their details are handled for genuine operational purposes and with reasonable care."
       highlights={highlights}

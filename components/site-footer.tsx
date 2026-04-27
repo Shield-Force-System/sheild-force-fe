@@ -35,10 +35,10 @@ export function SiteFooter() {
               </p>
               <h2 className="mt-3 flex flex-wrap items-end justify-center gap-x-3 gap-y-2 font-display text-[3rem] uppercase leading-none tracking-[-0.07em] text-[#1a110a] sm:text-[4rem] lg:text-[4.9rem]">
                 <span className="relative inline-block skew-x-[-10deg] text-[#fff2df]">
-                  Elite Security
+                 One of the leading 
                   <span className="absolute inset-x-0 bottom-1 h-3 rounded-full bg-[linear-gradient(90deg,rgba(26,17,10,0.8),rgba(26,17,10,0))] opacity-55" />
                 </span>
-                <span>& Mobility Command</span>
+                <span>Elite Security organization</span>
               </h2>
               <p className="mt-8 max-w-xl text-base leading-8 text-[#2f1f12]/88 sm:text-lg">
                 Shield Force delivers bodyguard deployment, event security, and private helicopter
@@ -72,7 +72,7 @@ export function SiteFooter() {
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1a110a] text-sm font-bold text-[#f5e1c6]">
                     C
                   </span>
-                  <span>2025 Shield Force. All rights reserved - Powered by Daftar Route Technology.</span>
+                  <span>2026 Shield Force. All rights reserved - Powered by Daftar Route Technology.</span>
                 </div>
               </div>
 

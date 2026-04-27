@@ -167,7 +167,6 @@ export const metadata: Metadata = {
 export default function RefundAndCancellationPage() {
   return (
     <LegalPageShell
-      eyebrow="Legal"
       title="Refund & Cancellation Policy"
       description="This page explains how cancellations, refund requests, and booking-related charges are handled through the Shield Force website. The aim is to give customers clear expectations and confidence about how review, approval, and communication are managed."
       highlights={highlights}

@@ -204,7 +204,6 @@ export const metadata: Metadata = {
 export default function TermsOfUsePage() {
   return (
     <LegalPageShell
-      eyebrow="Legal"
       title="Terms of Use"
       description="By accessing or using this website and services, you agree to the following terms. These terms are meant to set clear expectations, explain how requests are reviewed, and reassure customers that service coordination is handled in a structured and professional manner."
       highlights={highlights}

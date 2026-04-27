@@ -156,10 +156,9 @@ export function SiteHeader() {
             <div className="border-b border-white/8 px-6 py-5 sm:px-8">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="eyebrow">Service Enquiry</p>
                   <h2
                     id="general-enquiry-title"
-                    className="display-title mt-3 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.4rem]"
+                    className="display-title max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.4rem]"
                   >
                     Raise a Request
                   </h2>

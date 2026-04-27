@@ -29,8 +29,7 @@ export default function ServicesPage() {
         <div className="absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_80%_20%,rgba(209,161,93,0.18),transparent_30%)]" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="eyebrow">Service Map</p>
-            <h1 className="display-title mt-5 max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
+            <h1 className="display-title max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
              One Platform. Complete Protection / Security and Mobility. Unified
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
@@ -47,8 +46,7 @@ export default function ServicesPage() {
 
           <div className="warm-panel rounded-[1.9rem] border border-white/10 px-5 py-5 text-[#fff2d8] sm:px-6">
             <div className="relative z-10">
-              <p className="eyebrow text-[#fff0cf]/70">What Clients See</p>
-              <div className="mt-5">
+              <div>
                 <DetailList items={serviceSupportNotes} tone="warm" />
               </div>
             </div>
@@ -59,7 +57,6 @@ export default function ServicesPage() {
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
         <div className="relative z-10">
           <SectionHeading
-            eyebrow="Service Breakdown"
             title="Our Services"
             description="This page acts as the operational catalogue for the live website and lead flow."
           />
@@ -131,7 +128,6 @@ export default function ServicesPage() {
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
         <div className="relative z-10">
           <SectionHeading
-            eyebrow="Who Do We Serve"
             title="Shield Force is Designed For"
             description="Our deployments are built for clients who need dependable protection, discreet coordination, and controlled movement support."
           />
@@ -158,7 +154,6 @@ export default function ServicesPage() {
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <SectionHeading
-              eyebrow="Our Standard pricing"
               title="Pricing may vary with different factors as duration, risk factor and on events!"
               description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
             />
@@ -190,8 +185,7 @@ export default function ServicesPage() {
 
         <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
           <div className="relative z-10">
-            <p className="eyebrow text-white/58">Operating Notes</p>
-            <h2 className="display-title mt-4 max-w-[14ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+            <h2 className="display-title max-w-[14ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
              How Shield Force Works
             </h2>
 
