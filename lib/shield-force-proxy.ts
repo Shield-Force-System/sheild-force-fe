@@ -4,10 +4,15 @@ import { extractApiErrorMessage, getShieldForceApiCandidateUrls } from "@/lib/sh
 function filterForwardHeaders(request: NextRequest, isMultipart: boolean): Headers {
   const headers = new Headers();
   const accept = request.headers.get("accept");
+  const authorization = request.headers.get("authorization");
   const contentType = request.headers.get("content-type");
 
   if (accept) {
     headers.set("accept", accept);
+  }
+
+  if (authorization) {
+    headers.set("authorization", authorization);
   }
 
   if (contentType && !isMultipart) {

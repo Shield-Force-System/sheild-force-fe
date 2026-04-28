@@ -1,6 +1,7 @@
 const PROD_BACKEND_ORIGIN = "https://api.gods-eye.in";
 
 export const shieldForceApiRoutes = {
+  adminAuthSignIn: "/admin/auth/sign-in",
   bodyguards: "/bodyguards",
   bodyguardOnboard: "/bodyguards/onboard",
   bodyguardById: (id: string) => `/bodyguards/${id}`,

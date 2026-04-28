@@ -21,7 +21,7 @@ function SparkIcon({ className }: { className?: string }) {
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="mt-10">
+    <footer id="contact" data-public-chrome="footer" className="mt-10">
       <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-4 lg:px-6">
         <section className="relative flex min-h-[100svh] flex-col overflow-hidden rounded-t-[3.4rem] bg-[linear-gradient(180deg,#b88a59_0%,#ae7f4f_42%,#9d6f42_100%)] px-5 pb-12 pt-12 text-[#1a110a] sm:px-8 sm:pb-14 sm:pt-14 lg:px-10 lg:pb-16 lg:pt-18">
           <SparkIcon className="absolute left-[2.5%] top-[40%] h-6 w-6 text-[#f8ebd7]/80" />

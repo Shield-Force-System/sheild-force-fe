@@ -110,7 +110,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
                     </Link>
                     <Link
                       href="#flight-enquiry"
-                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
+                      className="cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
                     >
                       Send enquiry
                       <ArrowIcon />
@@ -120,18 +120,6 @@ Charter premium helicopters for business, events, or personal travel with seamle
 
                 <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0">
                   <HeroRotorcraft />
-                </div>
-
-                <div className="absolute bottom-6 right-4 z-30 rounded-full bg-white p-2 text-black shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:right-6">
-                  <div className="flex items-center gap-3 rounded-full pr-3">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#111111] text-white">
-                      <ChatIcon />
-                    </span>
-                    <div className="text-sm leading-4">
-                      <div className="font-medium">Start a chat</div>
-                      <div className="text-black/70">with support</div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </section>

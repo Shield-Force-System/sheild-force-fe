@@ -12,7 +12,9 @@ export const metadata: Metadata = {
   description:
     "Shield Force website for bodyguard enquiries, helicopter leads, armed security, event deployment, and protected vehicles across UP and NCR.",
   icons: {
-    icon: "/Images/favicon.jpg",
+    icon: [{ url: "/Images/favicon.jpg", type: "image/jpeg" }],
+    shortcut: "/Images/favicon.jpg",
+    apple: "/Images/favicon.jpg",
   },
 };
 
