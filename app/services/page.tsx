@@ -30,7 +30,7 @@ export default function ServicesPage() {
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h1 className="display-title max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-             One Platform. Complete Protection / Security and Mobility. Unified
+             One Platform. Complete Protection 
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
               From elite security services to private air mobility, Shield Force delivers integrated solutions for safety, movement, and control seamlessly managed under one command.

@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h1 className="display-title max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-             Trusted for VIP, political & high-risk movement
+                Need Security or Helicopter Rental? We’ve Got You Covered 
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
               Shield Force delivers integrated protection solutions for VIPs, executives, and high-risk movement across Delhi NCR and UP, combining trained personnel, controlled deployment, and coordinated mobility.
