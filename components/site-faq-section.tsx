@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/site-primitives";
 
 export function SiteFaqSection() {
   return (
-    <section id="faq" className="page-shell pb-4 sm:pb-6 lg:pb-8">
+    <section id="faq" data-public-chrome="faq" className="page-shell pb-4 sm:pb-6 lg:pb-8">
       <div className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
         <div className="relative z-10">
           <SectionHeading

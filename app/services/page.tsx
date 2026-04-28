@@ -180,6 +180,9 @@ export default function ServicesPage() {
                 </tbody>
               </table>
             </div>
+            <p className="mt-4 text-sm italic text-white/64">
+              *Custom quotes available for long-term and high-risk assignments.
+            </p>
           </div>
         </article>
 

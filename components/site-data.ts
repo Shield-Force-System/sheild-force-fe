@@ -19,7 +19,7 @@ export const serviceCards = [
     href: "/services#armed-rifle",
     tag: "High Visibility",
     image: {
-      src: "/Images/ArmedSecurity1.png",
+      src: "/Images/ArmedSecurity2.png",
       alt: "Shield Force armed rifle security deployment",
     },
     summary:
@@ -34,7 +34,7 @@ export const serviceCards = [
     href: "/services#armed-pistol",
     tag: "Close Protection",
     image: {
-      src: "/Images/ArmedSecurity2.png",
+      src: "/Images/ArmedSecurity1.png",
       alt: "Shield Force close protection armed security",
     },
     summary:

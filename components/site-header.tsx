@@ -85,7 +85,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50">
+      <header data-public-chrome="header" className="fixed inset-x-0 top-0 z-50">
         <div className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
           <div className="relative flex items-center justify-between gap-4 overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
@@ -114,16 +114,22 @@ export function SiteHeader() {
 
               <Link
                 href="/"
-                className="brand-mark text-[13px] uppercase text-white sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+                aria-label="Shield Force"
+                className="inline-flex flex-col items-center text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2"
               >
-                Shield Force
+                <span className="brand-mark text-[13px] uppercase text-white">
+                  Shield Force
+                </span>
+                <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.28em] text-[#d9d4ca] sm:text-[9px]">
+                  Trusted by the Elite
+                </span>
               </Link>
 
               <div className="ml-auto flex items-center gap-2">
                 <button
                   type="button"
                   onClick={() => setIsEnquiryOpen(true)}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
+                  className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
                 >
                   Send Enquiry
                   <ArrowIcon />
