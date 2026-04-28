@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Home",
   description:
     "Shield Force homepage for personal bodyguards, armed security, helicopter booking, event deployment, and protected vehicles.",
+  verification: {
+    google: "cuF1l_kTUZmnL51BV4dcEln5CCExd4d_i3toG9SLdgU",
+  },
 };
 
 function ServicePanel({
