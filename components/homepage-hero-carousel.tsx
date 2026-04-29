@@ -80,7 +80,7 @@ const slides = [
   },
   {
     id: "05",
-    title: "Protected Vehicles",
+    title: "Protected Vehicles - On Demand Services",
     lines: ["Protected", "Vehicles"],
     description:
       "On-demand bullet proof SUVs integrated with guard and route support.",

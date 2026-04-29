@@ -89,7 +89,7 @@ export default function HelicopterBookingPage() {
 
                 <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
                   <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-                    <span className="block">Private helicopter Rental - On Demand</span>
+                    <span className="block">Helicopter Rental - On Demand Services</span>
                     {/* <span className="block"></span> */}
                     <span className="block"></span>
                   </h1>

@@ -75,7 +75,7 @@ export const serviceCards = [
   },
   {
     id: "events-security",
-    title: "Events & Celebrity Security",
+    title: "Event & VIP Security",
     href: "/services#events-security",
     tag: "Crowd-Control Ops",
     image: {

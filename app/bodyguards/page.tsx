@@ -16,6 +16,24 @@ const clientProof = [
   "Issued I-card, dress standard, safari suit, and walky talky readiness",
 ] as const;
 
+const armedServiceDetails = [
+  "Rapid Emergency Response",
+  "VIP & Asset Protection",
+  "Advanced Surveillance Monitoring",
+  "Crisis & Threat Management",
+  "Law Enforcement Coordination",
+] as const;
+
+function getProfileServiceDetails(role: string) {
+  const normalizedRole = role.toLowerCase();
+
+  if (normalizedRole.includes("rifle") || normalizedRole.includes("pistol")) {
+    return armedServiceDetails;
+  }
+
+  return null;
+}
+
 export const metadata: Metadata = {
   title: "Bodyguards",
   description:
@@ -42,7 +60,7 @@ export default async function BodyguardsPage() {
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h1 className="display-title max-w-[11ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-              Select Your Protection. We Handle the Rest.
+              Armed Security Guard and Bodyguard Services
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
              Browse verified Shield Force professionals, review profiles, and submit your requirement. Every deployment is reviewed, planned, and executed by our command team.
@@ -78,54 +96,68 @@ export default async function BodyguardsPage() {
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-            {profiles.map((profile) => (
-              <article key={profile.name} className="rounded-[1.7rem] border border-white/8 bg-white/4 p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-[0.72rem] uppercase tracking-[0.2em] text-white/42">
-                      {profile.base}
+            {profiles.map((profile) => {
+              const serviceDetails = getProfileServiceDetails(profile.role);
+
+              return (
+                <article key={profile.name} className="rounded-[1.7rem] border border-white/8 bg-white/4 p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-[0.72rem] uppercase tracking-[0.2em] text-white/42">
+                        {profile.base}
+                      </div>
+                      <h2 className="display-title mt-3 text-[1.7rem] leading-[0.95] text-white">
+                        {profile.name}
+                      </h2>
+                      <p className="mt-2 text-sm text-white/68">{profile.role}</p>
                     </div>
-                    <h2 className="display-title mt-3 text-[1.7rem] leading-[0.95] text-white">
-                      {profile.name}
-                    </h2>
-                    <p className="mt-2 text-sm text-white/68">{profile.role}</p>
+                    <span className="rounded-full border border-[rgba(239,201,139,0.28)] bg-[rgba(209,161,93,0.08)] px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-strong)]">
+                      {profile.availability}
+                    </span>
                   </div>
-                  <span className="rounded-full border border-[rgba(239,201,139,0.28)] bg-[rgba(209,161,93,0.08)] px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-[var(--brand-strong)]">
-                    {profile.availability}
-                  </span>
-                </div>
 
-                <div className="mt-5 space-y-3 text-sm leading-6">
-                  <div>
-                    <div className="text-white/42">Training</div>
-                    <div className="text-[var(--ink-muted)]">{profile.training}</div>
+                  <div className="mt-5 space-y-3 text-sm leading-6">
+                    <div>
+                      <div className="text-white/42">Training</div>
+                      <div className="text-[var(--ink-muted)]">{profile.training}</div>
+                    </div>
+                    <div>
+                      <div className="text-white/42">Verification</div>
+                      <div className="text-[var(--ink-muted)]">{profile.licence}</div>
+                    </div>
+                    <div>
+                      <div className="text-white/42">Issued kit</div>
+                      <div className="text-[var(--ink-muted)]">{profile.equipment}</div>
+                    </div>
+                    {serviceDetails ? (
+                      <div>
+                        <div className="text-white/42">Service Details</div>
+                        <ol className="mt-2 list-decimal space-y-1 pl-5 text-[var(--ink-muted)]">
+                          {serviceDetails.map((detail) => (
+                            <li key={detail}>{detail}</li>
+                          ))}
+                        </ol>
+                      </div>
+                    ) : null}
                   </div>
-                  <div>
-                    <div className="text-white/42">Verification</div>
-                    <div className="text-[var(--ink-muted)]">{profile.licence}</div>
-                  </div>
-                  <div>
-                    <div className="text-white/42">Issued kit</div>
-                    <div className="text-[var(--ink-muted)]">{profile.equipment}</div>
-                  </div>
-                </div>
 
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Link
-                    href="#customer-enquiry"
-                    className="inline-flex items-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
-                  >
-                    Request this guard
-                  </Link>
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm text-white transition hover:bg-white/12"
-                  >
-                    Review services
-                  </Link>
-                </div>
-              </article>
-            ))}
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link
+                      href="#customer-enquiry"
+                      className="inline-flex items-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-sm font-medium text-[#11130f] transition hover:bg-[var(--brand-strong)]"
+                    >
+                      Request this guard
+                    </Link>
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-4 py-2.5 text-sm text-white transition hover:bg-white/12"
+                    >
+                      Review services
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

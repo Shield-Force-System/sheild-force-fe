@@ -4,9 +4,8 @@ import {
   deploymentProtocol,
   pricingRows,
   serviceCards,
-  serviceSupportNotes,
 } from "@/components/site-data";
-import { ActionLink, DetailList, SectionHeading } from "@/components/site-primitives";
+import { ActionLink, SectionHeading } from "@/components/site-primitives";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -29,8 +28,8 @@ export default function ServicesPage() {
         <div className="absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_80%_20%,rgba(209,161,93,0.18),transparent_30%)]" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h1 className="display-title max-w-[12ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-             One Platform. Complete Protection 
+            <h1 className="display-title text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
+             End-to-End Security and Mobility Solutions
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
               From elite security services to private air mobility, Shield Force delivers integrated solutions for safety, movement, and control seamlessly managed under one command.
@@ -44,13 +43,13 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="warm-panel rounded-[1.9rem] border border-white/10 px-5 py-5 text-[#fff2d8] sm:px-6">
+          {/* <div className="warm-panel rounded-[1.9rem] border border-white/10 px-5 py-5 text-[#fff2d8] sm:px-6">
             <div className="relative z-10">
               <div>
                 <DetailList items={serviceSupportNotes} tone="warm" />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -125,31 +124,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
-        <div className="relative z-10">
-          <SectionHeading
-            title="Shield Force is Designed For"
-            description="Our deployments are built for clients who need dependable protection, discreet coordination, and controlled movement support."
-          />
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-            {serviceAudiences.map((audience, index) => (
-              <article
-                key={audience}
-                className={`rounded-[1.5rem] border border-white/8 p-5 ${
-                  index % 2 === 0 ? "bg-white/4" : "bg-black/14"
-                }`}
-              >
-                <div className="text-[0.72rem] uppercase tracking-[0.22em] text-[var(--brand-strong)]">
-                  0{index + 1}
-                </div>
-                <h2 className="mt-3 text-lg font-semibold leading-7 text-white">{audience}</h2>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="mt-6 grid gap-4 xl:grid-cols-[0.98fr_1.02fr]">
         <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
@@ -202,6 +176,22 @@ export default function ServicesPage() {
             </div>
           </div>
         </article>
+      </section>
+
+      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
+        <div className="relative z-10">
+          <h2 className="display-title max-w-[18ch] text-[2rem] leading-[0.92] text-white sm:text-[2.6rem]">
+            Shield Force is Designed For
+          </h2>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+            {serviceAudiences.map((audience) => (
+              <article key={audience} className="rounded-[1.5rem] border border-white/8 bg-white/4 p-5">
+                <h3 className="text-lg font-semibold leading-7 text-white">{audience}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
