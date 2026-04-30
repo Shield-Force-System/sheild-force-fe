@@ -9,7 +9,7 @@ const primaryNav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Bodyguards", href: "/bodyguards" },
-  { label: "Helicopter Booking", href: "/helicopter-booking" },
+  { label: "Charter Helicopter", href: "/charter-booking" },
 ];
 
 function ArrowIcon() {
