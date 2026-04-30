@@ -6,7 +6,6 @@ import {
   deploymentProtocol,
   pricingRows,
   serviceCards,
-  serviceSupportNotes,
 } from "@/components/site-data";
 import { ArrowIcon, SectionHeading } from "@/components/site-primitives";
 
@@ -120,7 +119,7 @@ export default function Home() {
               className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
             >
               <SectionHeading
-                title="Every Shield Force service now has A complete suite of professional security and movement solutions"
+                title="Every Shield Force Service Now Has a Complete Suite of Professional Security and Movement Solutions"
                 description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
               />
 
@@ -146,7 +145,7 @@ export default function Home() {
               <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    title="Pricing may vary with different factors as duration, risk factor and on events!"
+                    title="Pricing May Vary With Duration, Risk Factors, and Events"
                     description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
                   />
 
@@ -181,7 +180,7 @@ export default function Home() {
               <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    title="Operations And Protocols"
+                    title="Operations and Protocols"
                     description="Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection."
                   />
                   {/* <p>Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection.</p> */}

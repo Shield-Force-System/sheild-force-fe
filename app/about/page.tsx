@@ -18,11 +18,11 @@ const heroHighlights = [
 ] as const;
 
 const whoWeAreSpecialties = [
-  "Personal bodyguard services",
-  "Armed and unarmed security deployment",
-  "VIP and celebrity protection",
-  "Event and political movement security",
-  "Helicopter Rentals and Helicopter-assisted mobility with protection",
+  "Personal Bodyguard Services",
+  "Armed and Unarmed Security Deployment",
+  "VIP and Celebrity Protection",
+  "Event and Political Movement Security",
+  "Helicopter Rentals and Helicopter-Assisted Mobility With Protection",
 ] as const;
 
 const operatingCoverage = [
@@ -33,10 +33,10 @@ const operatingCoverage = [
 
 const whoWeServeClients = [
   "High Net Worth Individuals (HNI)",
-  "Politicians and public figures",
-  "Celebrities and media personalities",
-  "Corporate leaders and executives",
-  "Event organizers",
+  "Politicians and Public Figures",
+  "Celebrities and Media Personalities",
+  "Corporate Leaders and Executives",
+  "Event Organizers",
 ] as const;
 
 export const metadata: Metadata = {
@@ -52,8 +52,8 @@ export default function AboutPage() {
         <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_70%_30%,rgba(239,201,139,0.16),transparent_28%)]" />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h1 className="display-title max-w-[13ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem]">
-Need Security or Helicopter Rental? We’ve Got You Covered 
+            <h1 className="display-title max-w-[13ch] text-[3rem] leading-[0.88] text-white sm:text-[4rem] lg:max-w-none">
+              Need Security or Helicopter Rental? We’ve Got You Covered
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
               Shield Force delivers integrated protection solutions for VIPs, executives, and high-risk movement across Delhi NCR and UP, combining trained personnel, controlled deployment, and coordinated mobility.
@@ -91,7 +91,7 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[var(--brand-strong)]">
               WHO WE ARE
             </div>
-            <h2 className="display-title mt-5 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title mt-5 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
               Built for Security-Critical Operations
             </h2>
             <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
@@ -122,7 +122,7 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[#fff0cf]/72">
               WHERE WE OPERATE
             </div>
-            <h2 className="display-title mt-5 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title mt-5 max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
               Focused Coverage. Strong Ground Presence.
             </h2>
             <p className="mt-5 text-sm leading-7 text-[#fff1d8]/80 sm:text-base">
@@ -149,7 +149,7 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
           <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[var(--brand-strong)]">
             WHAT MAKES US DIFFERENT
           </div>
-          <h2 className="display-title mt-5 max-w-[16ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+          <h2 className="display-title mt-5 max-w-[16ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
             Designed for Real-World Security Scenarios
           </h2>
 
@@ -170,9 +170,9 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-white/60">
               DEPLOYMENT MODEL
             </div>
-            <h2 className="display-title mt-5 max-w-[15ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
-              Shield Force operates on a structured deployment model to ensure reliability and
-              clarity at every stage.
+            <h2 className="display-title mt-5 max-w-[15ch] text-[2rem] leading-[0.92] sm:text-[2.5rem] lg:max-w-none">
+              Shield Force Operates on a Structured Deployment Model to Ensure Reliability and
+              Clarity at Every Stage.
             </h2>
           </div>
         </article>
@@ -182,7 +182,7 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[var(--brand-strong)]">
               WHO WE SERVE
             </div>
-            <h2 className="display-title mt-5 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+            <h2 className="display-title mt-5 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
               Clients We Work With
             </h2>
 

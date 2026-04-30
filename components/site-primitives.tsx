@@ -68,8 +68,8 @@ export function SectionHeading({
   description: string;
 }) {
   return (
-    <div className="max-w-[72rem]">
-      <h2 className="display-title max-w-[24ch] text-[2rem] leading-[0.92] text-white sm:max-w-[30ch] sm:text-[2.6rem]">
+    <div className="w-full">
+      <h2 className="display-title text-[2rem] leading-[0.92] text-white sm:text-[2.6rem]">
         {title}
       </h2>
       <p className="mt-4 max-w-[72ch] text-sm leading-7 text-[var(--ink-muted)] sm:text-base">

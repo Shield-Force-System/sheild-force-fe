@@ -332,6 +332,35 @@ a {
     transform 180ms ease;
 }
 
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 3rem;
+  color-scheme: dark;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(255, 255, 255, 0.62) 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.35rem) calc(50% - 0.15rem),
+    calc(100% - 1rem) calc(50% - 0.15rem);
+  background-size: 0.5rem 0.5rem, 0.5rem 0.5rem;
+  background-repeat: no-repeat;
+}
+
+.form-select option,
+.form-select optgroup {
+  background-color: #12191b;
+  color: #edf1ea;
+}
+
+.form-select option:checked,
+.form-select option:hover,
+.form-select option:focus {
+  background: linear-gradient(0deg, rgba(209, 161, 93, 0.2), rgba(209, 161, 93, 0.2)), #172124;
+  color: #ffffff;
+}
+
 .form-textarea {
   min-height: 7.5rem;
   resize: vertical;

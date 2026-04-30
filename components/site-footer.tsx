@@ -33,12 +33,12 @@ export function SiteFooter() {
               <p className="font-display text-[2.3rem] uppercase leading-none tracking-[-0.04em] text-[#1a110a] sm:text-[2.8rem] lg:text-[3.1rem]">
                 Shield Force
               </p>
-              <h2 className="mt-3 flex flex-wrap items-end justify-center gap-x-3 gap-y-2 font-display text-[3rem] uppercase leading-none tracking-[-0.07em] text-[#1a110a] sm:text-[4rem] lg:text-[4.9rem]">
+              <h2 className="mt-3 flex flex-wrap items-end justify-center gap-x-3 gap-y-2 font-display text-[3rem] leading-none tracking-[-0.07em] text-[#1a110a] sm:text-[4rem] lg:text-[4.9rem]">
                 <span className="relative inline-block skew-x-[-10deg] text-[#fff2df]">
-                 One of the leading 
+                  One of the Leading
                   <span className="absolute inset-x-0 bottom-1 h-3 rounded-full bg-[linear-gradient(90deg,rgba(26,17,10,0.8),rgba(26,17,10,0))] opacity-55" />
                 </span>
-                <span>Elite Security organization</span>
+                <span>Elite Security Organizations</span>
               </h2>
               <p className="mt-8 max-w-xl text-base leading-8 text-[#2f1f12]/88 sm:text-lg">
                 Shield Force delivers bodyguard deployment, event security, and private helicopter
@@ -61,6 +61,44 @@ export function SiteFooter() {
                 >
                   Send Helicopter Enquiry
                 </Link>
+              </div>
+
+              <div className="mt-10 w-full max-w-4xl rounded-[1.8rem] border border-[#1a110a]/12 bg-[#f6e6d0]/45 p-5 text-left shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:p-6">
+                <div className="grid gap-5 md:grid-cols-[1.7fr_0.9fr_0.7fr]">
+                  <div>
+                    <div className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#1a110a]/60">
+                      Address
+                    </div>
+                    <p className="mt-2 text-sm leading-7 text-[#2f1f12]/92 sm:text-base">
+                      5th Floor, Purvanchal Capital Tower, Plot No-TC-A, 1, Vibhuti Khand,
+                      Gomti Nagar, Lucknow, Uttar Pradesh 226010
+                    </p>
+                  </div>
+
+                  <div>
+                    <div className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#1a110a]/60">
+                      Email
+                    </div>
+                    <Link
+                      href="mailto:info@shield-force.com"
+                      className="mt-2 inline-block text-sm leading-7 text-[#2f1f12]/92 transition hover:text-[#fff2df] sm:text-base"
+                    >
+                      info@shield-force.com
+                    </Link>
+                  </div>
+
+                  <div>
+                    <div className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#1a110a]/60">
+                      Phone
+                    </div>
+                    <Link
+                      href="tel:9717793719"
+                      className="mt-2 inline-block text-sm leading-7 text-[#2f1f12]/92 transition hover:text-[#fff2df] sm:text-base"
+                    >
+                      9717793719
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

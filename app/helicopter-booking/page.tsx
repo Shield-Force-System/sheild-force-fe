@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ChatIcon,
   FleetCard,
   HeroRotorcraft,
   ServiceVisual,
@@ -48,15 +47,15 @@ const featuredFleet = [
 
 const charterBands = [
   {
-    title: "Commercial range",
+    title: "Commercial Range",
     text: "₹50,000 to ₹350,000 per hour depending on aircraft, route, positioning, and standby rules.",
   },
   {
-    title: "Operational geography",
+    title: "Operational Geography",
     text: "Current emphasis is UP and NCR, aligned with the first phase service footprint.",
   },
   {
-    title: "Commercial note",
+    title: "Commercial Note",
     text: "Terms and conditions apply to route availability, positioning legs, and event-day scheduling.",
   },
 ] as const;
@@ -89,7 +88,7 @@ export default function HelicopterBookingPage() {
 
                 <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
                   <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-                    <span className="block">Helicopter Rental - On Demand Services</span>
+                    <span className="block">Helicopter Rental - On-Demand Services</span>
                     {/* <span className="block"></span> */}
                     <span className="block"></span>
                   </h1>
@@ -131,11 +130,10 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="flex flex-col justify-between gap-6">
                   <div>
-                    <h2 className="max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem]">
+                    <h2 className="max-w-[14ch] font-display text-[2.1rem] leading-[0.98] tracking-[-0.05em] text-white sm:text-[2.9rem] lg:max-w-none">
                       A Dedicated Charter Experience
                     </h2>
-                  </div>
-                  <div className="max-w-md">
+                     <div className="max-w-md">
                     <p className="text-sm leading-7 text-white/56">
                       Review the charter use cases, submit your route and timing, and the team will
                       come back with aircraft suitability and commercial terms.
@@ -148,6 +146,8 @@ Charter premium helicopters for business, events, or personal travel with seamle
                       <ArrowIcon />
                     </Link>
                   </div>
+                  </div>
+                 
                 </div>
 
                 <div className="grid gap-4 lg:grid-cols-2">
@@ -206,14 +206,15 @@ Charter premium helicopters for business, events, or personal travel with seamle
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <h2 className="max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem]">
-                    Our fleet of luxurious helicopters
+                  <h2 className="max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem] lg:max-w-none">
+                    Our Fleet of Luxurious Helicopters
                   </h2>
-                </div>
-                <p className="max-w-md text-sm leading-6 text-white/55">
+                   <p className="max-w-md text-sm leading-6 text-white/55">
                   Explore aircraft configured for executive movement, scenic experiences, and
                   ultra-fast regional transfers.
                 </p>
+                </div>
+               
               </div>
 
               <div className="mt-8 grid gap-4 lg:grid-cols-2">
@@ -233,7 +234,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <article id="flight-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    title="Plan Your Charter "
+                    title="Plan Your Charter"
                     description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
                   />
 
@@ -243,7 +244,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
 
               <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
                 <div className="relative z-10">
-                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem] lg:max-w-none">
                     Charter Pricing Overview
                   </h2>
 
@@ -262,7 +263,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
             <section className="mt-6 grid gap-4 xl:grid-cols-[0.96fr_1.04fr]">
               <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
                 <div className="relative z-10">
-                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem]">
+                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] sm:text-[2.5rem] lg:max-w-none">
                     How It Works
                   </h2>
                   <div className="mt-6 space-y-4">
@@ -298,14 +299,18 @@ Charter premium helicopters for business, events, or personal travel with seamle
                         Continue high-sensitivity movement with an on-demand bullet proof SUV when needed.
                       </div>
                     </div>
-                      <div  className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
-                        <div className="text-lg font-semibold text-white">Corporate Executive Movement</div>
-                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">Airport pickup and drop for VIP, celebrity, and executive travel</div>
+                    <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                      <div className="text-lg font-semibold text-white">Corporate Executive Movement</div>
+                      <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
+                        Airport pickup and drop for VIP, celebrity, and executive travel
                       </div>
-                        <div  className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
-                        <div className="text-lg font-semibold text-white">High-Security or Time-Sensitive Operations</div>
-                        <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">Politician rally movement with time-sensitive land-to-air coordination</div>
+                    </div>
+                    <div className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5">
+                      <div className="text-lg font-semibold text-white">High-Security or Time-Sensitive Operations</div>
+                      <div className="mt-2 text-sm leading-7 text-[var(--ink-muted)]">
+                        Politician rally movement with time-sensitive land-to-air coordination
                       </div>
+                    </div>
                   </div>
 
                   <div className="mt-7">
