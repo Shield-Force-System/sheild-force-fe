@@ -35,12 +35,12 @@ const helicopterServices = [
 const featuredFleet = [
   {
     name: "CRH 29M",
-    price: "$990/hour",
+    price: "₹125K/hour",
     tone: "dark",
   },
   {
     name: "CRH 28",
-    price: "$1290/hour",
+    price: "₹145k/hour",
     tone: "light",
   },
 ] as const;
@@ -87,10 +87,9 @@ export default function HelicopterBookingPage() {
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
 
                 <div className="relative z-20 max-w-[21rem] pt-2 sm:pt-4 lg:pt-10">
-                  <h1 className="hero-title text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-                    <span className="block">Helicopter Rental - On-Demand Services</span>
-                    {/* <span className="block"></span> */}
-                    <span className="block"></span>
+                  <h1 className="hero-title text-[clamp(1.8rem,8.5vw,3rem)] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
+                    <span className="block whitespace-nowrap">Helicopter Rental</span>
+                    <span className="block whitespace-nowrap">- On Demand Services</span>
                   </h1>
 
                   <p className="mt-7 max-w-[18rem] text-sm leading-6 text-white/58 sm:text-[14px]">
