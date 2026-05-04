@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { HomepageHeroCarousel } from "@/components/homepage-hero-carousel";
 import {
-  deploymentProtocol,
   pricingRows,
   serviceCards,
 } from "@/components/site-data";
@@ -84,13 +83,13 @@ function ServicePanel({
         <p className="mt-3 text-sm leading-6 text-white/72">{summary}</p>
 
         <div className="mt-5 space-y-2 rounded-[1.2rem] border border-white/10 bg-black/12 p-4 text-sm">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
             <span className="text-white/56">Primary pricing</span>
-            <span>{price}</span>
+            <span className="break-words text-left sm:text-right">{price}</span>
           </div>
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
             <span className="text-white/56">Commercial note</span>
-            <span className="text-right">{support}</span>
+            <span className="break-words text-left sm:text-right">{support}</span>
           </div>
         </div>
 
@@ -110,90 +109,113 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <main className="mx-auto w-full max-w-[1720px] px-4 pb-4 pt-0 sm:px-6 sm:pb-6 sm:pt-0 lg:px-8 2xl:px-10">
-        <div className="mx-auto grid w-full gap-5">
-          <div className="space-y-5">
-            <HomepageHeroCarousel />
+        <div className="mx-auto w-full min-w-0 space-y-5">
+          <HomepageHeroCarousel />
 
-            <section
-              id="services"
-              className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
-            >
+          <section
+            id="services"
+            className="lux-shell min-w-0 rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
+          >
+            <SectionHeading
+              title="A Complete Suite of Professional Security and Movement Solutions"
+              description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
+            />
+
+            <div className="mt-8 grid min-w-0 gap-4 lg:grid-cols-3">
+              {serviceCards.map((service, index) => (
+                <ServicePanel
+                  key={service.id}
+                  title={service.title}
+                  summary={service.summary}
+                  href={service.href}
+                  price={service.price}
+                  support={service.support}
+                  location={service.location}
+                  tag={service.tag}
+                  tone={index % 3 === 0 ? "warm" : index % 3 === 1 ? "dark" : "olive"}
+                  image={service.image}
+                />
+              ))}
+            </div>
+          </section>
+
+          <section className="section-card min-w-0 rounded-[2rem] px-6 py-7 sm:px-8">
+            <div className="relative z-10">
               <SectionHeading
-                title="A Complete Suite of Professional Security and Movement Solutions"
-                description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
+                title="Pricing May Vary With Duration, Risk Factors, and Events"
+                description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
               />
 
-              <div className="mt-8 grid gap-4 lg:grid-cols-3">
-                {serviceCards.map((service, index) => (
-                  <ServicePanel
-                    key={service.id}
-                    title={service.title}
-                    summary={service.summary}
-                    href={service.href}
-                    price={service.price}
-                    support={service.support}
-                    location={service.location}
-                    tag={service.tag}
-                    tone={index % 3 === 0 ? "warm" : index % 3 === 1 ? "dark" : "olive"}
-                    image={service.image}
-                  />
+              <div className="mt-7 grid gap-3 sm:hidden">
+                {pricingRows.map((row) => (
+                  <article
+                    key={row.service}
+                    className="rounded-[1.35rem] border border-white/8 bg-white/4 p-4"
+                  >
+                    <h3 className="text-base font-semibold text-white">{row.service}</h3>
+                    <dl className="mt-3 space-y-2 text-sm text-white/78">
+                      <div className="flex flex-col gap-1">
+                        <dt className="text-white/52">Price</dt>
+                        <dd>{row.price}</dd>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <dt className="text-white/52">Location</dt>
+                        <dd>{row.location}</dd>
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <dt className="text-white/52">Events</dt>
+                        <dd>{row.eventRate}</dd>
+                      </div>
+                    </dl>
+                  </article>
                 ))}
               </div>
-            </section>
 
-      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
-                <div className="relative z-10">
-                  <SectionHeading
-                    title="Pricing May Vary With Duration, Risk Factors, and Events"
-                    description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
-                  />
-
-                  <div className="table-shell mt-7 overflow-x-auto">
-                    <table>
-                      <thead>
-                        <tr className="text-sm uppercase tracking-[0.18em] text-white/52">
-                          <th>Service</th>
-                          <th>Price</th>
-                          <th>Location</th>
-                          <th>Events</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-sm leading-6 text-white/78">
-                        {pricingRows.map((row) => (
-                          <tr key={row.service}>
-                            <td className="font-medium text-white">{row.service}</td>
-                            <td>{row.price}</td>
-                            <td>{row.location}</td>
-                            <td>{row.eventRate}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="mt-4 text-sm italic text-white/64">
-                    *Custom quotes available for long-term and high-risk assignments.
-                  </p>
-                </div>
-            </section>
-{/* 
-            <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
-              <div className="relative z-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-                <div>
-                  <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
-                     Every Shield Force assignment is executed through a refined operational model ensuring consistency, discretion, and complete control.
-                  </h2>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {serviceSupportNotes.map((note) => (
-                    <div key={note} className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5 text-sm leading-7 text-[var(--ink-muted)]">
-                      {note}
-                    </div>
-                  ))}
-                </div>
+              <div className="table-shell mt-7 hidden overflow-x-auto sm:block">
+                <table>
+                  <thead>
+                    <tr className="text-sm uppercase tracking-[0.18em] text-white/52">
+                      <th>Service</th>
+                      <th>Price</th>
+                      <th>Location</th>
+                      <th>Events</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm leading-6 text-white/78">
+                    {pricingRows.map((row) => (
+                      <tr key={row.service}>
+                        <td className="font-medium text-white">{row.service}</td>
+                        <td>{row.price}</td>
+                        <td>{row.location}</td>
+                        <td>{row.eventRate}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            </section> */}
-          </div>
+              <p className="mt-4 text-sm italic text-white/64">
+                *Custom quotes available for long-term and high-risk assignments.
+              </p>
+            </div>
+          </section>
+{/* 
+          <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+            <div className="relative z-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+              <div>
+                <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem]">
+                   Every Shield Force assignment is executed through a refined operational model ensuring consistency, discretion, and complete control.
+                </h2>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {serviceSupportNotes.map((note) => (
+                  <div key={note} className="rounded-[1.35rem] border border-white/8 bg-white/4 p-5 text-sm leading-7 text-[var(--ink-muted)]">
+                    {note}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section> */}
         </div>
       </main>
     </div>

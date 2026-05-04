@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChatIcon } from "@/components/aviation-showcase";
 import { ArrowIcon } from "@/components/site-primitives";
 
 const slides = [
@@ -120,7 +119,7 @@ export function HomepageHeroCarousel() {
   const activeSlide = slides[activeIndex];
 
   return (
-    <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
+    <section className="relative w-full min-w-0 overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
       <div className={`pointer-events-none absolute inset-0 transition-opacity duration-700 ${activeSlide.accent}`} />
 
@@ -128,79 +127,82 @@ export function HomepageHeroCarousel() {
         <div className="absolute inset-x-[18%] bottom-14 h-20 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),rgba(255,255,255,0.08)_30%,transparent_72%)] blur-[34px]" />
         <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(0,0,0,0.72))]" />
 
-        <div className="relative z-20 max-w-[30rem] pt-2 sm:pt-4 lg:pt-10">
-          <div key={activeSlide.id} className="transition duration-500 ease-out">
-            <h1 className="hero-title mt-4 text-[3rem] text-white sm:text-[3.75rem] lg:text-[4.4rem]">
-              <span className="block whitespace-nowrap">{`${activeSlide.lines[0]} ${activeSlide.lines[1]}`}</span>
-            </h1>
+        <div className="relative z-10 flex flex-col-reverse gap-8 lg:block">
+          <div className="relative z-20 mx-auto min-w-0 max-w-full text-center sm:max-w-[30rem] lg:mx-0 lg:pt-10 lg:text-left">
+            <div key={activeSlide.id} className="transition duration-500 ease-out">
+              <h1 className="hero-title mx-auto mt-4 max-w-[8ch] text-[clamp(2.8rem,16vw,4.4rem)] leading-[0.88] text-white sm:max-w-none sm:text-[3.75rem] lg:mx-0 lg:text-[4.4rem]">
+                <span className="block sm:inline">{activeSlide.lines[0]}</span>
+                <span className="block sm:ml-3 sm:inline">{activeSlide.lines[1]}</span>
+              </h1>
 
-            <p className="mt-7 max-w-[25rem] text-sm leading-6 text-white/58 sm:text-[14px]">
-              {activeSlide.description}
-            </p>
-          </div>
+              <p className="mx-auto mt-7 max-w-[20rem] text-sm leading-6 text-white/58 sm:max-w-[25rem] sm:text-[14px] lg:mx-0">
+                {activeSlide.description}
+              </p>
+            </div>
 
-          <div className="mt-6 flex max-w-[28rem] flex-wrap gap-2">
-            {heroBadges.map((badge) => (
-              <span
-                key={badge}
-                className="rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[0.7rem] uppercase tracking-[0.22em] text-white/68"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={activeSlide.href}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ae7f4f] px-5 py-3 text-sm font-medium text-[#130f0a] transition hover:bg-[#be9161]"
-            >
-              {activeSlide.cta}
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
-            >
-              Explore services
-              <ArrowIcon />
-            </Link>
-          </div>
-
-          <div className="mt-7 flex flex-wrap gap-2">
-            {slides.map((slide, index) => {
-              const isActive = index === activeIndex;
-
-              return (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setActiveIndex(index)}
-                  aria-pressed={isActive}
-                  className={`rounded-full border px-3 py-2 text-left text-[0.72rem] uppercase tracking-[0.22em] transition ${
-                    isActive
-                      ? "border-[rgba(239,201,139,0.38)] bg-[rgba(209,161,93,0.1)] text-[var(--brand-strong)]"
-                      : "border-white/10 bg-white/4 text-white/46 hover:bg-white/8 hover:text-white/74"
-                  }`}
+            <div className="mx-auto mt-6 grid min-w-0 max-w-full gap-2 sm:max-w-[28rem] sm:flex sm:flex-wrap lg:mx-0 lg:justify-start">
+              {heroBadges.map((badge) => (
+                <span
+                  key={badge}
+                  className="min-w-0 rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[0.7rem] uppercase tracking-[0.22em] text-white/68"
                 >
-                  {slide.id}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                  {badge}
+                </span>
+              ))}
+            </div>
 
-        <div className="hero-float pointer-events-none relative z-10 mx-auto mt-10 w-[118%] max-w-[1020px] -translate-x-[10%] sm:mt-6 sm:w-[112%] sm:max-w-[1120px] sm:-translate-x-[3%] lg:absolute lg:bottom-2 lg:left-[18%] lg:-right-6 lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0 xl:-right-8">
-          <div key={activeSlide.id} className={`transition duration-500 ease-out ${activeSlide.image.frameClassName}`}>
-            <Image
-              src={activeSlide.image.src}
-              alt={activeSlide.image.alt}
-              width={activeSlide.image.width}
-              height={activeSlide.image.height}
-              priority
-              sizes="(min-width: 1024px) 79vw, (min-width: 640px) 112vw, 118vw"
-              className="h-auto w-full object-contain object-bottom lg:object-right-bottom drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
-            />
+            <div className="mx-auto mt-7 flex max-w-full flex-col gap-3 sm:flex-row lg:mx-0 lg:justify-start">
+              <Link
+                href={activeSlide.href}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ae7f4f] px-5 py-3 text-sm font-medium text-[#130f0a] transition hover:bg-[#be9161]"
+              >
+                {activeSlide.cta}
+                <ArrowIcon />
+              </Link>
+              <Link
+                href="#services"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
+              >
+                Explore services
+                <ArrowIcon />
+              </Link>
+            </div>
+
+            <div className="mt-7 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {slides.map((slide, index) => {
+                const isActive = index === activeIndex;
+
+                return (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-pressed={isActive}
+                    className={`rounded-full border px-3 py-2 text-left text-[0.72rem] uppercase tracking-[0.22em] transition ${
+                      isActive
+                        ? "border-[rgba(239,201,139,0.38)] bg-[rgba(209,161,93,0.1)] text-[var(--brand-strong)]"
+                        : "border-white/10 bg-white/4 text-white/46 hover:bg-white/8 hover:text-white/74"
+                    }`}
+                  >
+                    {slide.id}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="hero-float pointer-events-none relative z-10 mx-auto w-full max-w-[420px] sm:max-w-[560px] lg:absolute lg:bottom-2 lg:left-[18%] lg:-right-6 lg:mt-0 lg:w-[79%] lg:max-w-none lg:translate-x-0 xl:-right-8">
+            <div key={activeSlide.id} className={`transition duration-500 ease-out ${activeSlide.image.frameClassName}`}>
+              <Image
+                src={activeSlide.image.src}
+                alt={activeSlide.image.alt}
+                width={activeSlide.image.width}
+                height={activeSlide.image.height}
+                priority
+                sizes="(min-width: 1024px) 79vw, (min-width: 640px) 72vw, 100vw"
+                className="h-auto w-full object-contain object-bottom lg:object-right-bottom drop-shadow-[0_26px_50px_rgba(0,0,0,0.55)]"
+              />
+            </div>
           </div>
         </div>
 

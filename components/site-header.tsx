@@ -107,18 +107,18 @@ export function SiteHeader() {
   return (
     <>
       <header data-public-chrome="header" className="fixed inset-x-0 top-0 z-50">
-        <div className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
+        <div className="mx-auto w-full max-w-[1720px] px-3 py-3 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
 
-            <div className="relative flex w-full items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+            <div className="relative flex w-full items-center justify-between gap-3 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
               <button
                 type="button"
                 aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-controls="mobile-site-nav"
                 aria-expanded={isMobileNavOpen}
                 onClick={() => setIsMobileNavOpen((open) => !open)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-white/72 transition hover:bg-white/8 hover:text-white md:hidden"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/4 text-white/72 transition hover:bg-white/8 hover:text-white md:hidden"
               >
                 {isMobileNavOpen ? <CloseIcon /> : <MenuIcon />}
               </button>
@@ -147,24 +147,24 @@ export function SiteHeader() {
               <Link
                 href="/"
                 aria-label="Shield Force"
-                className="inline-flex flex-col items-center text-center sm:absolute sm:left-1/2 sm:-translate-x-1/2"
+                className="inline-flex min-w-0 flex-1 flex-col items-center px-1 text-center sm:absolute sm:left-1/2 sm:flex-none sm:-translate-x-1/2 sm:px-0"
               >
-                <span className="brand-mark text-[13px] uppercase text-white">
+                <span className="brand-mark text-[11px] uppercase tracking-[0.24em] text-white sm:text-[13px] sm:tracking-[0.34em]">
                   Shield Force
                 </span>
-                <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.28em] text-[#d9d4ca] sm:text-[9px]">
+                <span className="mt-1 text-[7px] font-medium uppercase tracking-[0.22em] text-[#d9d4ca] sm:text-[9px] sm:tracking-[0.28em]">
                   Trusted by the Elite
                 </span>
               </Link>
 
-              <div className="ml-auto flex items-center gap-2">
+              <div className="ml-auto flex shrink-0 items-center gap-2">
                 <button
                   type="button"
                   onClick={() => {
                     setIsMobileNavOpen(false);
                     setIsEnquiryOpen(true);
                   }}
-                  className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
+                  className="cursor-pointer inline-flex items-center gap-1.5 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-3 py-2 text-[11px] font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)] sm:gap-2 sm:px-4 sm:text-xs"
                 >
                   Send Enquiry
                   <ArrowIcon />
