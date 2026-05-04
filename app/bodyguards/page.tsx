@@ -207,7 +207,7 @@ export default async function BodyguardsPage() {
         <article id="customer-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem] lg:max-w-none">
-              Send a Bodyguard Enquiry With Profile Preference, Location, and Deployment Brief.
+              Need a bodyguard ? Enquiry Now
             </h2>
 
             <form className="mt-6 grid gap-4" action="#">

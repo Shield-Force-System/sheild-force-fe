@@ -129,8 +129,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="mt-6 grid gap-4 xl:grid-cols-[0.98fr_1.02fr]">
-        <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <SectionHeading
               title="Pricing May Vary With Duration, Risk Factors, and Events"
@@ -163,24 +162,7 @@ export default function ServicesPage() {
               *Custom quotes available for long-term and high-risk assignments.
             </p>
           </div>
-        </article>
 
-        <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
-          <div className="relative z-10">
-            <h2 className="display-title max-w-[14ch] text-[2rem] leading-[0.92] sm:text-[2.5rem] lg:max-w-none">
-              How Shield Force Works
-            </h2>
-
-            <div className="mt-6 grid gap-4">
-              {deploymentProtocol.map((item) => (
-                <div key={item.title} className="rounded-[1.35rem] border border-white/10 bg-black/14 p-5">
-                  <div className="text-base font-semibold text-white">{item.title}</div>
-                  <div className="mt-2 text-sm leading-7 text-white/70">{item.detail}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </article>
       </section>
 
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">

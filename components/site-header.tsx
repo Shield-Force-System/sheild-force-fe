@@ -48,9 +48,29 @@ function CloseIcon() {
   );
 }
 
+function MenuIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      fill="none"
+      className="h-4 w-4"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    >
+      <path d="M3.5 5.5h13" />
+      <path d="M3.5 10h13" />
+      <path d="M3.5 14.5h13" />
+    </svg>
+  );
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   useEffect(() => {
     if (!isEnquiryOpen) {
@@ -66,13 +86,14 @@ export function SiteHeader() {
   }, [isEnquiryOpen]);
 
   useEffect(() => {
-    if (!isEnquiryOpen) {
+    if (!isEnquiryOpen && !isMobileNavOpen) {
       return;
     }
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setIsEnquiryOpen(false);
+        setIsMobileNavOpen(false);
       }
     }
 
@@ -81,16 +102,27 @@ export function SiteHeader() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isEnquiryOpen]);
+  }, [isEnquiryOpen, isMobileNavOpen]);
 
   return (
     <>
       <header data-public-chrome="header" className="fixed inset-x-0 top-0 z-50">
         <div className="mx-auto w-full max-w-[1720px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 2xl:px-10">
-          <div className="relative flex items-center justify-between gap-4 overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#050505] shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.015),transparent_18%),radial-gradient(circle_at_61%_40%,rgba(255,255,255,0.06),transparent_16%),radial-gradient(circle_at_44%_82%,rgba(255,255,255,0.12),transparent_24%)]" />
 
             <div className="relative flex w-full items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+              <button
+                type="button"
+                aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-controls="mobile-site-nav"
+                aria-expanded={isMobileNavOpen}
+                onClick={() => setIsMobileNavOpen((open) => !open)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-white/72 transition hover:bg-white/8 hover:text-white md:hidden"
+              >
+                {isMobileNavOpen ? <CloseIcon /> : <MenuIcon />}
+              </button>
+
               <nav className="hidden items-center gap-8 text-[13px] md:flex">
                 {primaryNav.map((item) => {
                   const isActive =
@@ -128,21 +160,46 @@ export function SiteHeader() {
               <div className="ml-auto flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setIsEnquiryOpen(true)}
+                  onClick={() => {
+                    setIsMobileNavOpen(false);
+                    setIsEnquiryOpen(true);
+                  }}
                   className="cursor-pointer inline-flex items-center gap-2 rounded-full border border-[#d9d4ca] bg-[#f5f1e8] px-4 py-2 text-xs font-semibold tracking-[0.02em] text-[#050505] shadow-[0_10px_24px_rgba(0,0,0,0.16)]"
                 >
                   Send Enquiry
                   <ArrowIcon />
                 </button>
-
-                {/* <button
-                  type="button"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#ae7f4f] text-black"
-                >
-                  <MenuIcon />
-                </button> */}
               </div>
             </div>
+
+            {isMobileNavOpen ? (
+              <nav
+                id="mobile-site-nav"
+                className="relative border-t border-white/10 px-4 pb-4 pt-2 md:hidden"
+              >
+                <div className="grid gap-2">
+                  {primaryNav.map((item) => {
+                    const isActive =
+                      pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+                    return (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        onClick={() => setIsMobileNavOpen(false)}
+                        className={`rounded-[1.2rem] border px-4 py-3 text-sm transition ${
+                          isActive
+                            ? "border-[rgba(239,201,139,0.28)] bg-[rgba(209,161,93,0.1)] text-white"
+                            : "border-white/8 bg-white/3 text-white/72 hover:bg-white/7 hover:text-white"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </nav>
+            ) : null}
           </div>
         </div>
       </header>

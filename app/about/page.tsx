@@ -164,8 +164,8 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
         </div>
       </section>
 
-      <section className="mt-6 grid gap-4 xl:grid-cols-[0.9fr_1.1fr]">
-        <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
+      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
+        {/* <article className="olive-panel rounded-[2rem] border border-white/10 px-6 py-7 text-white sm:px-8">
           <div className="relative z-10">
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-white/60">
               DEPLOYMENT MODEL
@@ -175,9 +175,9 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
               Clarity at Every Stage.
             </h2>
           </div>
-        </article>
+        </article> */}
 
-        <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+        {/* <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8"> */}
           <div className="relative z-10">
             <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[var(--brand-strong)]">
               WHO WE SERVE
@@ -194,7 +194,7 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
               ))}
             </div>
           </div>
-        </article>
+        {/* </article> */}
       </section>
     </div>
   );

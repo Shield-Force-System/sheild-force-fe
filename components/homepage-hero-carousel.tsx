@@ -204,7 +204,7 @@ export function HomepageHeroCarousel() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 right-4 z-30 rounded-full bg-white p-2 text-black shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:right-6">
+        {/* <div className="absolute bottom-6 right-4 z-30 rounded-full bg-white p-2 text-black shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:right-6">
           <div className="flex items-center gap-3 rounded-full pr-3">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#111111] text-white">
               <ChatIcon />
@@ -214,7 +214,7 @@ export function HomepageHeroCarousel() {
               <div className="text-black/70">active command focus</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -119,7 +119,7 @@ export default function Home() {
               className="lux-shell rounded-[2rem] border border-white/8 px-5 py-6 sm:px-7 sm:py-8"
             >
               <SectionHeading
-                title="Every Shield Force Service Now Has a Complete Suite of Professional Security and Movement Solutions"
+                title="A Complete Suite of Professional Security and Movement Solutions"
                 description="From bodyguards and armed security to helicopter rental, event coverage, and protected vehicles, the homepage now shows each service more clearly instead of making the user read every card first."
               />
 
@@ -141,8 +141,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="grid gap-4 xl:grid-cols-[1.04fr_0.96fr]">
-              <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
+      <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
                     title="Pricing May Vary With Duration, Risk Factors, and Events"
@@ -175,26 +174,6 @@ export default function Home() {
                     *Custom quotes available for long-term and high-risk assignments.
                   </p>
                 </div>
-              </article>
-
-              <article className="warm-panel rounded-[2rem] border border-white/10 px-6 py-7 text-[#fff2d8] sm:px-8">
-                <div className="relative z-10">
-                  <SectionHeading
-                    title="Operations and Protocols"
-                    description="Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection."
-                  />
-                  {/* <p>Every assignment is handled through structured protocols, verified personnel, and real-time coordination ensuring consistent and dependable protection.</p> */}
-
-                  <div className="mt-6 space-y-4">
-                    {deploymentProtocol.map((item) => (
-                      <div key={item.title} className="rounded-[1.35rem] border border-white/10 bg-black/12 p-5">
-                        <div className="text-base font-semibold text-white">{item.title}</div>
-                        <div className="mt-2 text-sm leading-7 text-[#fff1d8]/78">{item.detail}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </article>
             </section>
 {/* 
             <section className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
