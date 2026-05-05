@@ -16,6 +16,88 @@ function appendFiles(payload: FormData, fieldName: string, values: FormDataEntry
   });
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function asString(value: unknown): string | null {
+  if (typeof value === "string") {
+    const trimmed = value.trim();
+    return trimmed ? trimmed : null;
+  }
+
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+
+  return null;
+}
+
+async function readResponsePayload(response: Response): Promise<unknown> {
+  const text = await response.text();
+
+  if (!text) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    return text;
+  }
+}
+
+function extractPayloadMessage(payload: unknown): string | null {
+  if (typeof payload === "string") {
+    const trimmed = payload.trim();
+    return trimmed || null;
+  }
+
+  if (!isRecord(payload)) {
+    return null;
+  }
+
+  const directMessage =
+    asString(payload.message) ?? asString(payload.error) ?? asString(payload.detail);
+
+  if (directMessage) {
+    return directMessage;
+  }
+
+  if (isRecord(payload.data)) {
+    return (
+      asString(payload.data.message) ??
+      asString(payload.data.error) ??
+      asString(payload.data.detail)
+    );
+  }
+
+  return null;
+}
+
+function extractBodyguardId(payload: unknown): string | null {
+  if (!isRecord(payload)) {
+    return null;
+  }
+
+  const directId = asString(payload.bodyguard_id ?? payload.bodyguardId ?? payload.id);
+
+  if (directId) {
+    return directId;
+  }
+
+  const nestedRecord =
+    (isRecord(payload.data) ? payload.data : null) ??
+    (isRecord(payload.bodyguard) ? payload.bodyguard : null) ??
+    null;
+
+  if (!nestedRecord) {
+    return null;
+  }
+
+  return asString(nestedRecord.bodyguard_id ?? nestedRecord.bodyguardId ?? nestedRecord.id);
+}
+
 const steps = [
   {
     id: "01",
@@ -208,12 +290,22 @@ export function BodyguardOnboardingForm() {
           throw new Error(await readApiResponseMessage(response));
         }
 
+        const responsePayload = await readResponsePayload(response);
+        const bodyguardId = extractBodyguardId(responsePayload);
+        const responseMessage = extractPayloadMessage(responsePayload);
+
         form.reset();
         resetForm();
         setFeedback({
           tone: "success",
           message:
-            "Your onboarding request has been submitted for review. Shield Force will verify the documents and contact you.",
+            bodyguardId
+              ? `${
+                  responseMessage ??
+                  "Your onboarding request has been submitted for review. Shield Force will verify the documents and contact you."
+                } Bodyguard ID: ${bodyguardId}.`
+              : responseMessage ??
+                "Your onboarding request has been submitted for review. Shield Force will verify the documents and contact you.",
         });
       } catch (error) {
         setFeedback({

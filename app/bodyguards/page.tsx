@@ -156,7 +156,7 @@ export default async function BodyguardsPage() {
           <div className="relative z-10">
             <SectionHeading
               title="How Deployment Works"
-              description="The page now makes it clear how a client picks a guard, submits the form, and gets a follow-up from the team."
+              description=""
             />
 
             <div className="mt-7 space-y-4">

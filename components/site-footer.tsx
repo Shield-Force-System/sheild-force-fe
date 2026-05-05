@@ -34,9 +34,9 @@ export function SiteFooter() {
                 Shield Force
               </p>
               <h2 className="mt-3 flex flex-wrap items-end justify-center gap-x-3 gap-y-2 font-display text-[3rem] leading-none tracking-[-0.07em] text-[#1a110a] sm:text-[4rem] lg:text-[4.9rem]">
-                <span className="relative inline-block skew-x-[-10deg] text-[#fff2df]">
-                  One of the Leading
-                  <span className="absolute inset-x-0 bottom-1 h-3 rounded-full bg-[linear-gradient(90deg,rgba(26,17,10,0.8),rgba(26,17,10,0))] opacity-55" />
+                <span className="relative inline-block skew-x-[-10deg]">
+                  <span className="relative z-10 text-[#fff2df]">One of the Leading</span>
+                  {/* <span className="pointer-events-none absolute inset-x-1 bottom-1 z-0 h-2 rounded-full bg-[linear-gradient(90deg,rgba(26,17,10,0.72),rgba(26,17,10,0.12))] opacity-40 sm:inset-x-0 sm:h-3 sm:opacity-55" /> */}
                 </span>
                 <span>Elite Security Organizations</span>
               </h2>
@@ -124,8 +124,8 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="pointer-events-none absolute inset-x-0 bottom-[-4.5rem] overflow-hidden">
-            <div className="translate-x-[-1%] select-none text-[7rem] font-black uppercase leading-none tracking-[-0.08em] text-[#875b33]/45 sm:text-[11rem] lg:text-[18rem]">
+          <div className="pointer-events-none absolute inset-x-0 bottom-[-1.4rem] overflow-hidden sm:bottom-[-4.5rem]">
+            <div className="translate-x-[-1%] select-none whitespace-nowrap text-[5.25rem] font-black uppercase leading-none tracking-[-0.08em] text-[#875b33]/45 sm:text-[11rem] lg:text-[18rem]">
               Shield
             </div>
           </div>

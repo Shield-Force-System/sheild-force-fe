@@ -57,7 +57,7 @@ export default function ServicesPage() {
         <div className="relative z-10">
           <SectionHeading
             title="Our Services"
-            description="This page acts as the operational catalogue for the live website and lead flow."
+            description=""
           />
 
           <div className="mt-8 grid gap-4">
