@@ -94,10 +94,10 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
             <h2 className="display-title mt-5 max-w-[14ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
               Built for Security-Critical Operations
             </h2>
-            <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
+            {/* <p className="mt-5 max-w-3xl text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
               Shield Force is an operational security platform designed for environments where
               safety, timing, and control cannot be compromised.
-            </p>
+            </p> */}
             <p className="mt-4 text-sm leading-7 text-[var(--ink-muted)] sm:text-base">
               We specialize in:
             </p>
@@ -149,9 +149,9 @@ From personal bodyguards to helicopter-assisted movement, every operation is han
           <div className="text-[0.72rem] uppercase tracking-[0.24em] text-[var(--brand-strong)]">
             WHAT MAKES US DIFFERENT
           </div>
-          <h2 className="display-title mt-5 max-w-[16ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
+          {/* <h2 className="display-title mt-5 max-w-[16ch] text-[2rem] leading-[0.92] text-white sm:text-[2.5rem] lg:max-w-none">
             Designed for Real-World Security Scenarios
-          </h2>
+          </h2> */}
 
           <div className="mt-7 grid gap-4 lg:grid-cols-2">
             {deploymentProtocol.map((item) => (

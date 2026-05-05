@@ -16,7 +16,7 @@ export const serviceCards = [
   {
     id: "armed-rifle",
     title: "Armed Security - Rifle",
-    href: "/services#armed-rifle",
+    href: "/bodyguards",
     tag: "High Visibility",
     image: {
       src: "/Images/ArmedSecurity2.png",
@@ -31,7 +31,7 @@ export const serviceCards = [
   {
     id: "armed-pistol",
     title: "Armed Security - Pistol",
-    href: "/services#armed-pistol",
+    href: "/bodyguards",
     tag: "Close Protection",
     image: {
       src: "/Images/ArmedSecurity1.png",
@@ -46,7 +46,7 @@ export const serviceCards = [
   {
     id: "personal-bodyguard",
     title: "Personal Bodyguard",
-    href: "/services#personal-bodyguard",
+    href: "/bodyguards",
     tag: "Executive Escort",
     image: {
       src: "/Images/bodyguard.png",
@@ -61,7 +61,7 @@ export const serviceCards = [
   {
     id: "helicopter-rental",
     title: "Helicopter Rental",
-    href: "/helicopter-booking",
+    href: "/charter-booking",
     tag: "Rapid Mobility",
     image: {
       src: "/Images/helicopter.png",
@@ -76,7 +76,7 @@ export const serviceCards = [
   {
     id: "events-security",
     title: "Event & VIP Security",
-    href: "/services#events-security",
+    href: "/services",
     tag: "Crowd-Control Ops",
     image: {
       src: "/Images/Events1.png",
@@ -91,7 +91,7 @@ export const serviceCards = [
   {
     id: "on-demand-vehicle",
     title: "On-Demand Bullet Proof Vehicles",
-    href: "/services#on-demand-vehicle",
+    href: "/services",
     tag: "Protected Transport",
     image: {
       src: "/Images/Car.png",

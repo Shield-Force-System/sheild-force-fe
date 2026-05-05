@@ -63,7 +63,7 @@ export default async function BodyguardsPage() {
               Armed Security Guard and Bodyguard Services
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
-             Browse verified Shield Force professionals, review profiles, and submit your requirement. Every deployment is reviewed, planned, and executed by our command team.
+             Browse verified Shield Force professionals, review profiles, and submit your requirement.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -74,17 +74,6 @@ export default async function BodyguardsPage() {
             </div>
           </div>
 
-          <div className="section-card rounded-[1.9rem] px-5 py-5 sm:px-6">
-            <div className="relative z-10">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {clientProof.map((item) => (
-                  <div key={item} className="rounded-[1.3rem] border border-white/8 bg-white/4 px-4 py-4 text-sm leading-6 text-[var(--ink-muted)]">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -92,7 +81,7 @@ export default async function BodyguardsPage() {
         <div className="relative z-10">
           <SectionHeading
             title="Verified Professionals. Ready for Deployment."
-            description="Each profile represents a trained, background-verified professional operating under Shield Force protocols and supervision."
+            description=""
           />
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
@@ -207,7 +196,7 @@ export default async function BodyguardsPage() {
         <article id="customer-enquiry" className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <h2 className="display-title max-w-[13ch] text-[2rem] leading-[0.94] text-white sm:text-[2.5rem] lg:max-w-none">
-              Need a bodyguard ? Enquiry Now
+              Submit a Bodyguard Enquiry
             </h2>
 
             <form className="mt-6 grid gap-4" action="#">

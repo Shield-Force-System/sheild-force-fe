@@ -20,7 +20,7 @@ export function SiteFaqSection() {
         <div className="relative z-10">
           <SectionHeading
             title="Frequently Asked Questions"
-            description="Users can access booking, protection, mobility, and helicopter information directly from any page."
+            description=""
           />
 
           <div

@@ -117,8 +117,9 @@ export function FleetCard({
         <Link
           href={href}
           className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium ${
-            dark ? "bg-[#ae7f4f] text-[#120e0a]" : "bg-[#101010] text-[#f8f2e8]"
+            dark ? "bg-[#ae7f4f]" : "bg-[#101010]"
           }`}
+          style={{ color: dark ? "#120e0a" : "#f8f2e8" }}
         >
           Request charter
           <ArrowIcon />

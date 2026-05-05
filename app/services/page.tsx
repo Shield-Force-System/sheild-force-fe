@@ -132,8 +132,8 @@ export default function ServicesPage() {
       <section className="mt-6 section-card rounded-[2rem] px-6 py-7 sm:px-8">
           <div className="relative z-10">
             <SectionHeading
-              title="Pricing May Vary With Duration, Risk Factors, and Events"
-              description="Every deployment is priced based on expertise, duration, and operational requirements ensuring clarity and complete trust."
+              title="Pricing Overview"
+              description=""
             />
 
             <div className="table-shell mt-7 overflow-x-auto">

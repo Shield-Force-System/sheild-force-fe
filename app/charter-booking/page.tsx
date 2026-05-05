@@ -94,7 +94,7 @@ export default function HelicopterBookingPage() {
 
                   <p className="mt-7 max-w-[18rem] text-sm leading-6 text-white/58 sm:text-[14px]">
                    Skip traffic. Save time. Arrive in style.
-Charter premium helicopters for business, events, or personal travel with seamless coordination from request to landing.
+Charter premium helicopters for business, events, or personal travel.
 
                   </p>
 
@@ -133,10 +133,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
                       A Dedicated Charter Experience
                     </h2>
                      <div className="max-w-md">
-                    <p className="text-sm leading-7 text-white/56">
-                      Review the charter use cases, submit your route and timing, and the team will
-                      come back with aircraft suitability and commercial terms.
-                    </p>
+                   
                     <Link
                       href="#flight-enquiry"
                       className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/12"
@@ -208,10 +205,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
                   <h2 className="max-w-[12ch] font-display text-[2.2rem] leading-[0.95] tracking-[-0.05em] text-white sm:text-[3rem] lg:max-w-none">
                     Our Fleet of Luxurious Helicopters
                   </h2>
-                   <p className="max-w-md text-sm leading-6 text-white/55">
-                  Explore aircraft configured for executive movement, scenic experiences, and
-                  ultra-fast regional transfers.
-                </p>
+                 
                 </div>
                
               </div>
@@ -234,7 +228,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
                 <div className="relative z-10">
                   <SectionHeading
                     title="Plan Your Charter"
-                    description="Share the route, timing, and passenger details here, and Shield Force follows up manually with the next steps."
+                    description="Share the route, timing, and passenger details here."
                   />
 
                   <HelicopterEnquiryForm />
@@ -281,7 +275,7 @@ Charter premium helicopters for business, events, or personal travel with seamle
               <article className="section-card rounded-[2rem] px-6 py-7 sm:px-8">
                 <div className="relative z-10">
                   <SectionHeading
-                    title="Built for High-Stakes Movement:"
+                    title="Who We Serve"
                     description="Shield Force integrates air mobility with on-ground protection and transport ensuring a seamless, secure experience"
                   />
 
