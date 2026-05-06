@@ -9,9 +9,11 @@ import {
 import { ArrowIcon, SectionHeading } from "@/components/site-primitives";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    absolute: "Armed Security, Bodyguard & Charter Helicopter Services",
+  },
   description:
-    "Shield Force homepage for personal bodyguards, armed security, helicopter booking, event deployment, and protected vehicles.",
+    "Shield Force delivers end-to-end security and mobility solutions, including armed security, professional bodyguards, and charter helicopter services.",
   verification: {
     google: "cuF1l_kTUZmnL51BV4dcEln5CCExd4d_i3toG9SLdgU",
   },

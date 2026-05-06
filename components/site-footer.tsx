@@ -55,7 +55,7 @@ export function SiteFooter() {
                   View Services
                 </Link>
                 <Link
-                  href="/helicopter-booking"
+                  href="/charter-booking"
                   className="inline-flex min-w-[11.5rem] items-center justify-center rounded-2xl border border-black/14 bg-[#f8ebd7] px-5 py-3 text-sm font-medium text-[#1a110a] transition hover:translate-y-[-1px]"
                   style={{ color: "#1a110a" }}
                 >
@@ -110,7 +110,18 @@ export function SiteFooter() {
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#1a110a] text-sm font-bold text-[#f5e1c6]">
                     C
                   </span>
-                  <span>2026 Shield Force. All rights reserved - Powered by Daftar Route Technology.</span>
+                  <span>
+                    2026 Shield Force. All rights reserved - Powered by{" "}
+                    <Link
+                      href="https://www.daftarroute.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline-offset-4 transition hover:text-[#f8ebd7] hover:underline"
+                    >
+                      Daftar Route Technology
+                    </Link>
+                    .
+                  </span>
                 </div>
               </div>
 

@@ -8,9 +8,11 @@ import {
 import { ActionLink, SectionHeading } from "@/components/site-primitives";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: {
+    absolute: "Complete Protection Services for Every Need | Shield Force",
+  },
   description:
-    "Shield Force services covering armed bodyguards, personal protection, helicopter rental, events, and protected vehicles.",
+    "From personal bodyguards to armed security and helicopter support, Shield Force handles every detail of your safety. Flexible, dependable, & trusted by elite.",
 };
 
 const serviceAudiences = [
@@ -37,7 +39,7 @@ export default function ServicesPage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <ActionLink href="/bodyguards">Request Protection</ActionLink>
-              <ActionLink href="/helicopter-booking" variant="ghost">
+              <ActionLink href="/charter-booking" variant="ghost">
                 Open Helicopter Booking
               </ActionLink>
             </div>

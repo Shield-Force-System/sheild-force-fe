@@ -68,9 +68,11 @@ const helicopterFlow = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Helicopter Booking",
+  title: {
+    absolute: "Private Helicopter Charter Services | Shield Force",
+  },
   description:
-    "Shield Force helicopter booking page with charter options, fleet visuals, website enquiry capture, and manual follow-up flow.",
+    "Book private helicopter charters for fast, safe, and flexible travel. Shield Force offers reliable air mobility solutions for any requirements.",
 };
 
 export default function HelicopterBookingPage() {

@@ -29,7 +29,7 @@ const slides = [
     lines: ["Helicopter", "Rental"],
     description:
       "Charter planning, airport coordination, and rapid movement support for high-priority travel.",
-    href: "/helicopter-booking",
+    href: "/charter-booking",
     cta: "Book helicopter",
     image: {
       src: "/Images/helicopter.png",
@@ -160,7 +160,7 @@ export function HomepageHeroCarousel() {
                 <ArrowIcon />
               </Link>
               <Link
-                href="#bodyguards"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 bg-[#111111] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#171717]"
               >
                 Explore services

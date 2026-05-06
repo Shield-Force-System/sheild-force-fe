@@ -40,9 +40,11 @@ const whoWeServeClients = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "About",
+  title: {
+    absolute: "About Shield Force | Security, Bodyguards & Helicopter Services",
+  },
   description:
-    "About Shield Force, its operational security model, deployment coverage, and integrated mobility support across Delhi NCR, Lucknow, and Uttar Pradesh.",
+    "Learn about Shield Force, a trusted provider of armed security, professional bodyguards, and charter helicopter services. We deliver reliable, end-to-end protection solutions focused on safety, precision, and seamless execution.",
 };
 
 export default function AboutPage() {

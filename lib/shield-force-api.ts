@@ -441,7 +441,7 @@ export function mapHelicopterFleetCard(
     price: hourlyRate ? `${hourlyRate}/hour` : "Quote on request",
     details: details || undefined,
     tone: index % 2 === 0 ? "dark" : "light",
-    href: `/helicopter-booking?helicopter=${encodeURIComponent(helicopterId)}#flight-enquiry`,
+    href: `/charter-booking?helicopter=${encodeURIComponent(helicopterId)}#flight-enquiry`,
   };
 }
 

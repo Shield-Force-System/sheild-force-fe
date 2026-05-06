@@ -71,7 +71,7 @@ export function FleetCard({
   price,
   details,
   tone,
-  href = "/helicopter-booking",
+  href = "/charter-booking",
   compact = false,
 }: {
   name: string;

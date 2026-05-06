@@ -3,7 +3,7 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/bodyguards", label: "Bodyguards" },
-  { href: "/helicopter-booking", label: "Helicopter Booking" },
+  { href: "/charter-booking", label: "Helicopter Booking" },
 ] as const;
 
 export const heroStats = [

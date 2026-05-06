@@ -35,9 +35,11 @@ function getProfileServiceDetails(role: string) {
 }
 
 export const metadata: Metadata = {
-  title: "Bodyguards",
+  title: {
+    absolute: "Hire Bodyguard & Armed Security Services for Personal Safety",
+  },
   description:
-    "Shield Force bodyguard roster, onboarding flow, and website enquiry capture for personal and armed protection.",
+    "Hire trained bodyguards and armed security services for VIPs, executives, & personal safety. Shield Force provides reliable protection & trusted security.",
 };
 
 async function getBodyguardProfiles() {
