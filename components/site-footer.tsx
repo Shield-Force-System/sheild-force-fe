@@ -95,7 +95,7 @@ export function SiteFooter() {
                       href="tel:9717793719"
                       className="mt-2 inline-block text-sm leading-7 text-[#2f1f12]/92 transition hover:text-[#fff2df] sm:text-base"
                     >
-                      9717793719
+                      +91 770-190-0819
                     </Link>
                   </div>
                 </div>
