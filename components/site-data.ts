@@ -108,27 +108,27 @@ export const serviceCards = [
 export const pricingRows = [
   {
     service: "Trained Armed Security - Rifle",
-    price: "₹35,000 - ₹40,000 / month",
-    location: "UP, NCR",
-    eventRate: "₹2,500 / day",
+    price: "₹70,000 - ₹85,000 / month",
+    location: "PAN India",
+    eventRate: "₹5,500 / day",
   },
   {
-    service: "Normal Bodyguard",
-    price: "₹20,000 - ₹30,000 / month",
-    location: "UP, NCR",
-    eventRate: "₹1,000 / day",
+    service: "Personal Bodyguard",
+    price: "₹45,000 - ₹65,000 / month",
+    location: "PAN India",
+    eventRate: "₹3,500 / day",
   },
   {
     service: "Helicopter Rental",
-    price: "₹50,000 - ₹350,000 / hour",
-    location: "UP, NCR",
+    price: "₹250,000 - ₹350,000 / hour",
+    location: "PAN India",    
     eventRate: "T&C apply",
   },
   {
     service: "Bullet Proof Vehicle - SUV",
-    price: "₹10,000 - ₹20,000 / day",
-    location: "UP, NCR",
-    eventRate: "1000 km max, T&C apply",
+    price: "₹15,000 - ₹25,000 / day",
+    location: "PAN India",
+    eventRate: "9 hour/800 km max, T&C apply",
   },
 ] as const;
 
