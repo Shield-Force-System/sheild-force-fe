@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { EmailOtpVerifier } from "@/components/email-otp-verifier";
 import { FormFeedback } from "@/components/form-feedback";
 import {
   isPopulatedFile,
@@ -143,6 +144,7 @@ export function BodyguardOnboardingForm() {
     specializations: "",
     notes: "",
   });
+  const [otpToken, setOtpToken] = useState<string | null>(null);
   const [photo, setPhoto] = useState<File | null>(null);
   const [resume, setResume] = useState<File | null>(null);
   const [governmentId, setGovernmentId] = useState<File | null>(null);
@@ -172,6 +174,7 @@ export function BodyguardOnboardingForm() {
       specializations: "",
       notes: "",
     });
+    setOtpToken(null);
     setPhoto(null);
     setResume(null);
     setGovernmentId(null);
@@ -209,9 +212,14 @@ export function BodyguardOnboardingForm() {
     const error = getStepError(step);
 
     if (error) {
+      setFeedback({ tone: "error", message: error });
+      return;
+    }
+
+    if (step === 0 && !otpToken) {
       setFeedback({
         tone: "error",
-        message: error,
+        message: "Verify your email address before continuing.",
       });
       return;
     }
@@ -225,17 +233,16 @@ export function BodyguardOnboardingForm() {
     setStep((current) => Math.max(current - 1, 0));
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const form = event.currentTarget;
+  function handleSubmit(form: HTMLFormElement) {
     const validationError = getStepError(step);
 
     if (validationError) {
-      setFeedback({
-        tone: "error",
-        message: validationError,
-      });
+      setFeedback({ tone: "error", message: validationError });
+      return;
+    }
+
+    if (!otpToken) {
+      setFeedback({ tone: "error", message: "Email verification required." });
       return;
     }
 
@@ -261,6 +268,7 @@ export function BodyguardOnboardingForm() {
     payload.append("languages", fields.languages);
     payload.append("specializations", fields.specializations);
     payload.append("status", "ACTIVE");
+    payload.append("otp_token", otpToken);
 
     if (photo) {
       payload.append("photo", photo);
@@ -320,7 +328,10 @@ export function BodyguardOnboardingForm() {
   }
 
   return (
-    <form className="mt-6 grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="mt-6 grid gap-4"
+      onSubmit={(e) => { e.preventDefault(); handleSubmit(e.currentTarget); }}
+    >
       <div className="grid gap-3 sm:grid-cols-3">
         {steps.map((item, index) => {
           const isActive = index === step;
@@ -375,6 +386,12 @@ export function BodyguardOnboardingForm() {
               />
             </label>
           </div>
+
+          <EmailOtpVerifier
+            email={fields.email}
+            onVerified={setOtpToken}
+            onReset={() => setOtpToken(null)}
+          />
 
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="space-y-2 text-sm text-[#fff1d8]/82">

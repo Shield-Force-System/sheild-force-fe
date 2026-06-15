@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useTransition } from "react";
+import { EmailOtpVerifier } from "@/components/email-otp-verifier";
 import { FormFeedback } from "@/components/form-feedback";
 import {
   getTextField,
@@ -28,6 +29,8 @@ export function BodyguardLeadForm({
   initialPreferredGuard?: string;
 }) {
   const [preferredGuard, setPreferredGuard] = useState(initialPreferredGuard);
+  const [email, setEmail] = useState("");
+  const [otpToken, setOtpToken] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<SubmissionFeedback | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -35,10 +38,15 @@ export function BodyguardLeadForm({
     setPreferredGuard(initialPreferredGuard);
   }, [initialPreferredGuard]);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleSubmit(form: HTMLFormElement) {
+    if (!otpToken) {
+      setFeedback({
+        tone: "error",
+        message: "Verify your email address before submitting.",
+      });
+      return;
+    }
 
-    const form = event.currentTarget;
     const formData = new FormData(form);
     const serviceType = getTextField(formData, "service_type");
     const movementBrief = getTextField(formData, "movement_brief");
@@ -59,12 +67,13 @@ export function BodyguardLeadForm({
     const payload = {
       full_name: getTextField(formData, "full_name"),
       company_name: getTextField(formData, "company_name") || undefined,
-      email: getTextField(formData, "email"),
+      email,
       phone: getTextField(formData, "phone"),
       city: getTextField(formData, "city"),
       service_interest: "Bodyguard Requirement",
       bodyguard_count: Math.max(1, Number(getTextField(formData, "bodyguard_count")) || 1),
       requirement_summary: summary || "Bodyguard deployment enquiry submitted from the website.",
+      otp_token: otpToken,
     };
 
     setFeedback(null);
@@ -73,9 +82,7 @@ export function BodyguardLeadForm({
       try {
         const response = await fetch("/api/leads/bodyguard", {
           method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
+          headers: { "content-type": "application/json" },
           body: JSON.stringify(payload),
         });
 
@@ -84,6 +91,8 @@ export function BodyguardLeadForm({
         }
 
         form.reset();
+        setEmail("");
+        setOtpToken(null);
         setPreferredGuard(initialPreferredGuard);
         setFeedback({
           tone: "success",
@@ -103,7 +112,10 @@ export function BodyguardLeadForm({
   }
 
   return (
-    <form className="mt-6 grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="mt-6 grid gap-4"
+      onSubmit={(e) => { e.preventDefault(); handleSubmit(e.currentTarget); }}
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Full name</span>
@@ -122,10 +134,18 @@ export function BodyguardLeadForm({
             type="email"
             name="email"
             placeholder="name@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </label>
       </div>
+
+      <EmailOtpVerifier
+        email={email}
+        onVerified={setOtpToken}
+        onReset={() => setOtpToken(null)}
+      />
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">

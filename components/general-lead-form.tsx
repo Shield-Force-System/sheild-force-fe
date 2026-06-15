@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { EmailOtpVerifier } from "@/components/email-otp-verifier";
 import { FormFeedback } from "@/components/form-feedback";
 import {
   getTextField,
@@ -23,22 +24,30 @@ export function GeneralLeadForm({
 }: {
   className?: string;
 }) {
+  const [email, setEmail] = useState("");
+  const [otpToken, setOtpToken] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<SubmissionFeedback | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleSubmit(form: HTMLFormElement) {
+    if (!otpToken) {
+      setFeedback({
+        tone: "error",
+        message: "Verify your email address before submitting.",
+      });
+      return;
+    }
 
-    const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
       full_name: getTextField(formData, "full_name"),
       company_name: getTextField(formData, "company_name") || undefined,
-      email: getTextField(formData, "email"),
+      email,
       phone: getTextField(formData, "phone"),
       city: getTextField(formData, "city"),
       service_interest: getTextField(formData, "service_interest"),
       requirement_summary: getTextField(formData, "requirement_summary"),
+      otp_token: otpToken,
     };
 
     setFeedback(null);
@@ -47,9 +56,7 @@ export function GeneralLeadForm({
       try {
         const response = await fetch("/api/leads/general", {
           method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
+          headers: { "content-type": "application/json" },
           body: JSON.stringify(payload),
         });
 
@@ -58,6 +65,8 @@ export function GeneralLeadForm({
         }
 
         form.reset();
+        setEmail("");
+        setOtpToken(null);
         setFeedback({
           tone: "success",
           message:
@@ -76,7 +85,10 @@ export function GeneralLeadForm({
   }
 
   return (
-    <form className={className} onSubmit={handleSubmit}>
+    <form
+      className={className}
+      onSubmit={(e) => { e.preventDefault(); handleSubmit(e.currentTarget); }}
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Full name</span>
@@ -84,9 +96,23 @@ export function GeneralLeadForm({
         </label>
         <label className="space-y-2 text-sm text-white/78">
           <span>Email address</span>
-          <input className="form-input" type="email" name="email" placeholder="name@example.com" required />
+          <input
+            className="form-input"
+            type="email"
+            name="email"
+            placeholder="name@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </label>
       </div>
+
+      <EmailOtpVerifier
+        email={email}
+        onVerified={setOtpToken}
+        onReset={() => setOtpToken(null)}
+      />
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">

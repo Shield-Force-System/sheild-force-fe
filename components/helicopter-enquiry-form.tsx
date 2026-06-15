@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { EmailOtpVerifier } from "@/components/email-otp-verifier";
 import { FormFeedback } from "@/components/form-feedback";
 import {
   getTextField,
@@ -28,13 +29,20 @@ export function HelicopterEnquiryForm({
 }: {
   initialHelicopterId?: string;
 }) {
+  const [email, setEmail] = useState("");
+  const [otpToken, setOtpToken] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<SubmissionFeedback | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleSubmit(form: HTMLFormElement) {
+    if (!otpToken) {
+      setFeedback({
+        tone: "error",
+        message: "Verify your email address before submitting.",
+      });
+      return;
+    }
 
-    const form = event.currentTarget;
     const formData = new FormData(form);
     const serviceType = getTextField(formData, "service_type");
     const operationalNotes = getTextField(formData, "operational_notes");
@@ -51,11 +59,13 @@ export function HelicopterEnquiryForm({
 
     const payload: Record<string, string | number> = {
       full_name: getTextField(formData, "full_name"),
+      email,
       phone: getTextField(formData, "phone"),
       departure: getTextField(formData, "departure"),
       destination: getTextField(formData, "destination"),
       passenger_count: Math.max(1, Number(getTextField(formData, "passenger_count")) || 1),
       message: message || "Helicopter charter enquiry submitted from the website.",
+      otp_token: otpToken,
     };
 
     const selectedHelicopterId =
@@ -71,9 +81,7 @@ export function HelicopterEnquiryForm({
       try {
         const response = await fetch("/api/helicopter-enquiry", {
           method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
+          headers: { "content-type": "application/json" },
           body: JSON.stringify(payload),
         });
 
@@ -82,6 +90,8 @@ export function HelicopterEnquiryForm({
         }
 
         form.reset();
+        setEmail("");
+        setOtpToken(null);
         setFeedback({
           tone: "success",
           message:
@@ -100,7 +110,10 @@ export function HelicopterEnquiryForm({
   }
 
   return (
-    <form className="mt-7 grid gap-4" onSubmit={handleSubmit}>
+    <form
+      className="mt-7 grid gap-4"
+      onSubmit={(e) => { e.preventDefault(); handleSubmit(e.currentTarget); }}
+    >
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Full name</span>
@@ -113,6 +126,27 @@ export function HelicopterEnquiryForm({
           />
         </label>
         <label className="space-y-2 text-sm text-white/78">
+          <span>Email address</span>
+          <input
+            className="form-input"
+            type="email"
+            name="email"
+            placeholder="name@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </label>
+      </div>
+
+      <EmailOtpVerifier
+        email={email}
+        onVerified={setOtpToken}
+        onReset={() => setOtpToken(null)}
+      />
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="space-y-2 text-sm text-white/78">
           <span>Phone number</span>
           <input
             className="form-input"
@@ -122,13 +156,13 @@ export function HelicopterEnquiryForm({
             required
           />
         </label>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Departure</span>
           <input className="form-input" type="text" name="departure" placeholder="Lucknow, Noida, NCR" required />
         </label>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Arrival</span>
           <input
@@ -139,13 +173,13 @@ export function HelicopterEnquiryForm({
             required
           />
         </label>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Flight date</span>
           <input className="form-input" type="date" name="flight_date" />
         </label>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="space-y-2 text-sm text-white/78">
           <span>Passenger count</span>
           <input
@@ -157,18 +191,17 @@ export function HelicopterEnquiryForm({
             required
           />
         </label>
+        <label className="space-y-2 text-sm text-white/78">
+          <span>Service type</span>
+          <select className="form-select" name="service_type" defaultValue="charter">
+            {helicopterServiceOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
-
-      <label className="space-y-2 text-sm text-white/78">
-        <span>Service type</span>
-        <select className="form-select" name="service_type" defaultValue="charter">
-          {helicopterServiceOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </label>
 
       <label className="space-y-2 text-sm text-white/78">
         <span>Operational notes</span>
